@@ -1,51 +1,8 @@
 fileFormatVersion: 2
 guid: 83e778427b651d2418e2c159e43a8610
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: E1
-    100002: E2
-    100004: Eye
-    100006: N1
-    100008: N2
-    100010: NE1
-    100012: NE2
-    100014: NW1
-    100016: NW2
-    100018: //RootNode
-    100020: RainyDayUmbrella
-    100022: S1
-    100024: S2
-    100026: SE1
-    100028: SE2
-    100030: SW1
-    100032: SW2
-    100034: UmbrellaCenter
-    100036: W1
-    100038: W2
-    400000: E1
-    400002: E2
-    400004: Eye
-    400006: N1
-    400008: N2
-    400010: NE1
-    400012: NE2
-    400014: NW1
-    400016: NW2
-    400018: //RootNode
-    400020: RainyDayUmbrella
-    400022: S1
-    400024: S2
-    400026: SE1
-    400028: SE2
-    400030: SW1
-    400032: SW2
-    400034: UmbrellaCenter
-    400036: W1
-    400038: W2
-    4300000: RainyDayUmbrella
-    9500000: //RootNode
-    13700000: RainyDayUmbrella
+  serializedVersion: 27
+  internalIDToNameTable: []
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -101,6 +58,7 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -108,18 +66,19 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 0
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -128,10 +87,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -141,6 +100,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: RainyDayUmbrella
     hasTranslationDoF: 0
     hasExtraRoot: 0
@@ -148,6 +108,7 @@ ModelImporter:
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

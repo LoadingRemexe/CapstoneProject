@@ -1,78 +1,9 @@
 fileFormatVersion: 2
 guid: f97aa48ff7985354587d06190fcb73bd
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: Head
-    100002: Hips
-    100004: joint2
-    100006: LElbow
-    100008: LHand
-    100010: LHeel
-    100012: LHip
-    100014: LKnee
-    100016: LShoulder
-    100018: LToe
-    100020: LWrist
-    100022: Neck
-    100024: //RootNode
-    100026: RainyDayKid
-    100028: RElbow
-    100030: RHand
-    100032: RHeel
-    100034: RHIp
-    100036: Rknee
-    100038: RShoulder
-    100040: RToe
-    100042: RWrist
-    100044: Shoulders
-    400000: Head
-    400002: Hips
-    400004: joint2
-    400006: LElbow
-    400008: LHand
-    400010: LHeel
-    400012: LHip
-    400014: LKnee
-    400016: LShoulder
-    400018: LToe
-    400020: LWrist
-    400022: Neck
-    400024: RainyDayKid
-    400026: //RootNode
-    400028: RElbow
-    400030: RHand
-    400032: RHeel
-    400034: RHIp
-    400036: Rknee
-    400038: RShoulder
-    400040: RToe
-    400042: RWrist
-    400044: Shoulders
-    4300000: RainyDayKid
-    9500000: //RootNode
-    13700000: RainyDayKid
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Black
-    second: {fileID: 2100000, guid: 1b2520189442c6447ae823e99f6f1d57, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Face
-    second: {fileID: 2100000, guid: c043a01a3c3168944bfd6419a87441d6, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Jacket
-    second: {fileID: 2100000, guid: 3577c76b32562e94e80d3f67b1f342f4, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: YellowInky
-    second: {fileID: 2100000, guid: 9c205a2267442e94fa68a95f7cc86def, type: 2}
+  serializedVersion: 27
+  internalIDToNameTable: []
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -107,6 +38,7 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -114,18 +46,19 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 0
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -134,10 +67,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -147,6 +80,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: Hips
     hasTranslationDoF: 0
     hasExtraRoot: 0
@@ -154,6 +88,7 @@ ModelImporter:
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

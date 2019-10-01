@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ParaBearScarf
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Body
+    m_Weight: 1
+  - m_Path: Neck
+    m_Weight: 1
+  - m_Path: Neck/BackEye
+    m_Weight: 0
+  - m_Path: Neck/head
+    m_Weight: 0
+  - m_Path: Neck/head/Lear
+    m_Weight: 0
+  - m_Path: Neck/head/LEye
+    m_Weight: 0
+  - m_Path: Neck/head/REar
+    m_Weight: 0
+  - m_Path: Neck/head/Reye
+    m_Weight: 0
+  - m_Path: Neck/lhip
+    m_Weight: 0
+  - m_Path: Neck/lhip/lfoot
+    m_Weight: 0
+  - m_Path: Neck/LScarf1
+    m_Weight: 1
+  - m_Path: Neck/LScarf1/LScarf2
+    m_Weight: 1
+  - m_Path: Neck/LScarf1/LScarf2/LScarf3
+    m_Weight: 1
+  - m_Path: Neck/LScarf1/LScarf2/LScarf3/LScarf4
+    m_Weight: 1
+  - m_Path: Neck/LScarf1/LScarf2/LScarf3/LScarf4/LScarf5
+    m_Weight: 1
+  - m_Path: Neck/LScarf1/LScarf2/LScarf3/LScarf4/LScarf5/LScarf6
+    m_Weight: 1
+  - m_Path: Neck/LScarf1/LScarf2/LScarf3/LScarf4/LScarf5/LScarf6/LScarf7
+    m_Weight: 1
+  - m_Path: Neck/LScarf1/LScarf2/LScarf3/LScarf4/LScarf5/LScarf6/LScarf7/LScarf8
+    m_Weight: 1
+  - m_Path: Neck/rhip
+    m_Weight: 0
+  - m_Path: Neck/rhip/rfoot
+    m_Weight: 0
+  - m_Path: Neck/RScarf1
+    m_Weight: 1
+  - m_Path: Neck/RScarf1/RScarf2
+    m_Weight: 1
+  - m_Path: Neck/RScarf1/RScarf2/RScarf3
+    m_Weight: 1
+  - m_Path: Neck/RScarf1/RScarf2/RScarf3/RScarf4
+    m_Weight: 1
+  - m_Path: Neck/RScarf1/RScarf2/RScarf3/RScarf4/RScarf5
+    m_Weight: 1
+  - m_Path: Neck/RScarf1/RScarf2/RScarf3/RScarf4/RScarf5/RScarf6
+    m_Weight: 1
+  - m_Path: Neck/RScarf1/RScarf2/RScarf3/RScarf4/RScarf5/RScarf6/RScarf7
+    m_Weight: 1
+  - m_Path: Neck/RScarf1/RScarf2/RScarf3/RScarf4/RScarf5/RScarf6/RScarf7/RScarf8
+    m_Weight: 1
+  - m_Path: ScarfLHandle
+    m_Weight: 1
+  - m_Path: ScarfLHandle/ikHandle12
+    m_Weight: 1
+  - m_Path: ScarfLHandle/ikHandle12/ikHandle11
+    m_Weight: 1
+  - m_Path: ScarfLHandle/ikHandle12/ikHandle11/ikHandle10
+    m_Weight: 1
+  - m_Path: ScarfLHandle/ikHandle12/ikHandle11/ikHandle10/ikHandle9
+    m_Weight: 1
+  - m_Path: ScarfLHandle/ikHandle12/ikHandle11/ikHandle10/ikHandle9/ikHandle8
+    m_Weight: 1
+  - m_Path: ScarfLHandle/ikHandle12/ikHandle11/ikHandle10/ikHandle9/ikHandle8/ikHandle7
+    m_Weight: 1
+  - m_Path: ScarfRHandle
+    m_Weight: 1
+  - m_Path: ScarfRHandle/RHandle
+    m_Weight: 1
+  - m_Path: ScarfRHandle/RHandle/ikHandle5
+    m_Weight: 1
+  - m_Path: ScarfRHandle/RHandle/ikHandle5/ikHandle4
+    m_Weight: 1
+  - m_Path: ScarfRHandle/RHandle/ikHandle5/ikHandle4/ikHandle3
+    m_Weight: 1
+  - m_Path: ScarfRHandle/RHandle/ikHandle5/ikHandle4/ikHandle3/ikHandle2
+    m_Weight: 1
+  - m_Path: ScarfRHandle/RHandle/ikHandle5/ikHandle4/ikHandle3/ikHandle2/ikHandle1
+    m_Weight: 1
