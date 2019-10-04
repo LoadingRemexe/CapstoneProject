@@ -1,8 +1,4 @@
-﻿
-
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -29,7 +25,32 @@ public class PlayerMove : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.None;
         }
+        if (Input.GetKey(KeyCode.Mouse0))
+        {
+            ToggleInteract();
+        }
+
     }
+
+    public void ToggleInteract() 
+    {
+
+        Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit))
+        {
+            Interactable interactable = hit.collider.GetComponent<Interactable>();
+
+            if (interactable != null)
+            {
+                interactable.Interact();
+                //Debug.Log("Intracted with " + interactable.name);
+            }
+        }
+
+    }
+
     private void FixedUpdate()
     {
         rb.velocity = Vector3.zero;
