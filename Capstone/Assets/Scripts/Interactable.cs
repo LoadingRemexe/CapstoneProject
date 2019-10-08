@@ -25,9 +25,21 @@ public class Interactable : MonoBehaviour
         }
     }
 
+    public void Update()
+    {
+        if (Vector3.Distance(gameObject.transform.position, FindObjectOfType<PlayerMove>().transform.position) > FindObjectOfType<PlayerMove>().SightDistance)
+        {
+            if (OnHover) OnHover.SetActive(false);
+        }
+    }
+    private void OnMouseOver()
+    {
+        if (OnHover && Vector3.Distance(gameObject.transform.position, FindObjectOfType<PlayerMove>().transform.position) <= FindObjectOfType<PlayerMove>().SightDistance) OnHover.SetActive(true);
+        else OnHover.SetActive(false);
+    }
     void OnMouseEnter()
     {
-        if(OnHover) OnHover.SetActive(true);
+        if (OnHover && Vector3.Distance(gameObject.transform.position, FindObjectOfType<PlayerMove>().transform.position) <= FindObjectOfType<PlayerMove>().SightDistance) OnHover.SetActive(true);
     }
     void OnMouseExit()
     {

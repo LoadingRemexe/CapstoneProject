@@ -6,10 +6,13 @@ public class PlayerMove : MonoBehaviour
     public float limitY = 60.0f;
     public float cameraSmooth = 10.0f;
     public float speed = 10.0f;
+    public Transform PlayerHand;
+    public float SightDistance = 5.0f;
 
-    private float translation;
-    private float straffe;
-    private float lookVertical = 0.0f;
+    float translation;
+    float straffe;
+    float lookVertical = 0.0f;
+    Carryable heldObject = null;
 
     Rigidbody rb;
 
@@ -25,20 +28,31 @@ public class PlayerMove : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.None;
         }
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             ToggleInteract();
         }
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            DropObject();
+        }
 
+        if (Input.GetAxis("Mouse ScrollWheel") > 0 && heldObject)
+        {
+            heldObject.transform.Rotate(Vector3.one * 15f, Space.World);
+        }
+        if (Input.GetAxis("Mouse ScrollWheel") < 0 && heldObject)
+        {
+            heldObject.transform.Rotate(Vector3.one * -15f, Space.World);
+        }
     }
 
     public void ToggleInteract() 
     {
-
         Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit, SightDistance))
         {
             Interactable interactable = hit.collider.GetComponent<Interactable>();
 
@@ -48,7 +62,21 @@ public class PlayerMove : MonoBehaviour
                 //Debug.Log("Intracted with " + interactable.name);
             }
         }
+    }
 
+    public void PickUpObject(Carryable carryObj)
+    {
+        DropObject();
+        heldObject = carryObj;
+        PlayerHand.rotation = Quaternion.identity;
+        carryObj.transform.parent = PlayerHand;
+        carryObj.PickupObject();
+    }
+
+    public void DropObject()
+    {
+        if (heldObject) heldObject.DropHeldObject();
+        heldObject = null;
     }
 
     private void FixedUpdate()
