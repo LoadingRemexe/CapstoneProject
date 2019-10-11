@@ -1,21 +1,21 @@
 fileFormatVersion: 2
 guid: a88f347000b379a4286306e08b98875d
 ModelImporter:
-  serializedVersion: 26
+  serializedVersion: 28
   internalIDToNameTable: []
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: color1
-    second: {fileID: 2100000, guid: 1523fe2219cc19b448242aa334827ecd, type: 2}
+    second: {fileID: 2100000, guid: d7895a543493d1c409aaa3ee48864564, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: color2
-    second: {fileID: 2100000, guid: 8dc540177caa0994190240dc5c3a0516, type: 2}
+    second: {fileID: 2100000, guid: ba24ca6335ed3d24d8a60dfb762b7934, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 0
@@ -41,7 +41,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
@@ -79,7 +79,6 @@ ModelImporter:
     normalSmoothingSource: 0
   referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
     serializedVersion: 3
     human: []
@@ -99,6 +98,7 @@ ModelImporter:
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

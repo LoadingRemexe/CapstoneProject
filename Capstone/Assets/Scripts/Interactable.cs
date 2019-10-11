@@ -6,8 +6,8 @@ using UnityEngine.Events;
 
 public class Interactable : MonoBehaviour
 {
-    public UnityEvent InteractActivate = null;
-    public GameObject OnHover = null;
+    [SerializeField] UnityEvent InteractActivate = null;
+    [SerializeField] GameObject OnHover = null;
 
     public void Start()
     {
@@ -34,12 +34,18 @@ public class Interactable : MonoBehaviour
     }
     private void OnMouseOver()
     {
-        if (OnHover && Vector3.Distance(gameObject.transform.position, FindObjectOfType<PlayerMove>().transform.position) <= FindObjectOfType<PlayerMove>().SightDistance) OnHover.SetActive(true);
-        else OnHover.SetActive(false);
+        if (OnHover)
+        {
+            if (Vector3.Distance(gameObject.transform.position, FindObjectOfType<PlayerMove>().transform.position) <= FindObjectOfType<PlayerMove>().SightDistance) OnHover.SetActive(true);
+            else OnHover.SetActive(false);
+        }
     }
     void OnMouseEnter()
     {
-        if (OnHover && Vector3.Distance(gameObject.transform.position, FindObjectOfType<PlayerMove>().transform.position) <= FindObjectOfType<PlayerMove>().SightDistance) OnHover.SetActive(true);
+        if (OnHover)
+        {
+            if (Vector3.Distance(gameObject.transform.position, FindObjectOfType<PlayerMove>().transform.position) <= FindObjectOfType<PlayerMove>().SightDistance) OnHover.SetActive(true);
+        }
     }
     void OnMouseExit()
     {

@@ -1,21 +1,21 @@
 fileFormatVersion: 2
 guid: d78da8ebb832f1344a4fe9fbb13fcc8f
 ModelImporter:
-  serializedVersion: 27
+  serializedVersion: 28
   internalIDToNameTable: []
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Color2
-    second: {fileID: 2100000, guid: d6f501c77696689419ad852cad0d5f70, type: 2}
+    second: {fileID: 2100000, guid: ba24ca6335ed3d24d8a60dfb762b7934, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Color3
-    second: {fileID: 2100000, guid: e9bd42888fecc394ea6786f7e9173e57, type: 2}
+    second: {fileID: 2100000, guid: 2c911d5a927ebce41b0511c5e186166b, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 0
@@ -41,7 +41,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1

@@ -1,25 +1,84 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class ParaBearController : MonoBehaviour
 {
-    public List<GameObject> eyes = null;
+    [SerializeField] public ContainmentRoom containmentRoom;
+    [SerializeField] List<GameObject> eyes = null;
+    [SerializeField] Transform LeftScarfEnd;
+    public Animator animator;
+    public PlayerMove playerMove;
+    public NavMeshAgent navMeshAgent;
 
-    PlayerMove pm;
+    public int BabesConsumed = 0;
+    public float Hunger = 0.0f;
+    public float HungerTime = 60;
 
     void Start()
     {
-        pm = FindObjectOfType<PlayerMove>();
+        animator = GetComponent<Animator>();
+        playerMove = FindObjectOfType<PlayerMove>();
+        navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
     void Update()
     {
-       foreach(GameObject g in eyes)
-       {
-           g.transform.LookAt(pm.transform.position + Vector3.up * 2.0f);
-       }
+        foreach (GameObject g in eyes)
+        {
+            g.transform.LookAt(playerMove.transform.position + Vector3.up * 2.0f);
+        }
+        Hunger += Time.deltaTime;
+
+        animator.SetFloat("Speed", navMeshAgent.velocity.magnitude);
+    }
+
+    public void CheckForHunger()
+    {
+        if (Hunger >= HungerTime)
+        {
+            animator.SetTrigger("BreakOut");
+        }
+    }
+
+    public void CheckForPlayerSight()
+    {
+        Vector3 direction = playerMove.transform.position - animator.transform.position;
+        Ray ray = new Ray(animator.transform.position + Vector3.up, direction);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit))
+        {
+            if (hit.collider.CompareTag("Player"))
+            {
+                animator.SetTrigger("PlayerSight");
+                Debug.Log("Sees Player");
+
+            }
+        }
+    }
+
+    public bool AreAnyBabiesInView()
+    {
+        GameObject[] targets = GameObject.FindGameObjectsWithTag("Baby");
+        foreach (GameObject t in targets)
+        {
+            Vector3 direction = t.transform.position - animator.transform.position;
+            Ray ray = new Ray(animator.transform.position, direction);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.collider.CompareTag("Baby"))
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public void ResetHunger()
+    {
+        Hunger = 0.0f;
     }
 
     #region depreciated code

@@ -6,11 +6,11 @@ using UnityEngine;
 public class DialMove : MonoBehaviour
 {
 
-    public Transform Dial = null;
-    public float valueRate = 0.001f;
+    [SerializeField] Transform Dial = null;
+    [SerializeField] float valueRate = 0.001f;
 
-    public float DialValue = 0.5f;
-    public TextMeshProUGUI ValueReadout= null;
+    [SerializeField] float DialValue = 0.5f;
+    [SerializeField] TextMeshProUGUI ValueReadout= null;
 
 
     bool active = false;

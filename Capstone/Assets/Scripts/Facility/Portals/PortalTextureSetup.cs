@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PortalTextureSetup : MonoBehaviour
 {
-    public Camera cameraB;
-    public Camera cameraA;
-    public Material cameraMatB;
-    public Material cameraMatA;
+    [SerializeField] Camera cameraB;
+    [SerializeField] Camera cameraA;
+    [SerializeField] Material cameraMatB;
+    [SerializeField] Material cameraMatA;
     void Start()
     {
         if (cameraB.targetTexture != null)

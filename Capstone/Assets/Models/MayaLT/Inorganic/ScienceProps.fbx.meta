@@ -1,11 +1,51 @@
 fileFormatVersion: 2
 guid: fe0a1eb6b4acd0a4e81429540a84357f
 ModelImporter:
-  serializedVersion: 26
+  serializedVersion: 28
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BlackMetalic
+    second: {fileID: 2100000, guid: 2d70bba3a21e36f41b4c3ca6cf9b5871, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CorkboardTexture
+    second: {fileID: 2100000, guid: 8be949666cd513048965b167c11c0a30, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GreyMetalic
+    second: {fileID: 2100000, guid: a8888097f63eff0438206dfeb969cf38, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: White
+    second: {fileID: 2100000, guid: 41cdac60ad5be2442bc033e3e01a82db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: black
+    second: {fileID: 2100000, guid: 977719e99d1332c46bc8c18f445487f2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grey
+    second: {fileID: 2100000, guid: c48aa4d64bcf1bb4893cccb27c8bb136, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: phong1
+    second: {fileID: 2100000, guid: 79e3b718de8ac0c478dcc88652b9996e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tan
+    second: {fileID: 2100000, guid: 141362d895b2f21419dbefd1e1fb34c5, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 0
@@ -31,7 +71,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
@@ -69,7 +109,6 @@ ModelImporter:
     normalSmoothingSource: 0
   referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
     serializedVersion: 3
     human: []
@@ -89,6 +128,7 @@ ModelImporter:
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PortalCamera : MonoBehaviour
 {
-    public Transform playerCamera;
-    public Transform portal;
-    public Transform otherPortal;
-    public float cameraDistanceRestraint = 50.0f;
-    public bool portalFlipped = true;
+    [SerializeField] Transform playerCamera;
+    [SerializeField] Transform portal;
+    [SerializeField] Transform otherPortal;
+    [SerializeField] float cameraDistanceRestraint = 50.0f;
+    [SerializeField] bool portalFlipped = true;
 
     void Update()
     {

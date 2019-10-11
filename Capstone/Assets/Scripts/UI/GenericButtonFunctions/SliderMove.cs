@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class SliderMove : MonoBehaviour
 {
-    public Transform Slider = null;
+    [SerializeField] Transform Slider = null;
 
-    public float SliderValue = 0.5f;
-    public TextMeshProUGUI ValueReadout = null;
+    [SerializeField] float SliderValue = 0.5f;
+    [SerializeField] TextMeshProUGUI ValueReadout = null;
 
     bool active = false;
 

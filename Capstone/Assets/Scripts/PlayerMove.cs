@@ -2,15 +2,14 @@
 
 public class PlayerMove : MonoBehaviour
 {
-    public Camera playerCamera = null;
-    public float limitY = 60.0f;
-    public float cameraSmooth = 10.0f;
-    public float speed = 10.0f;
-    public Transform PlayerHand;
+    [SerializeField] Camera playerCamera = null;
+    [SerializeField] Transform PlayerHand;
+
+    float limitY = 60.0f;
+    float cameraSmooth = 10.0f;
+    float speed = 10.0f;
     public float SightDistance = 5.0f;
 
-    float translation;
-    float straffe;
     float lookVertical = 0.0f;
     Carryable heldObject = null;
 
@@ -70,7 +69,6 @@ public class PlayerMove : MonoBehaviour
         heldObject = carryObj;
         PlayerHand.rotation = Quaternion.identity;
         carryObj.transform.parent = PlayerHand;
-        carryObj.PickupObject();
     }
 
     public void DropObject()

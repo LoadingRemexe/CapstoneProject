@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class RainyDayController : MonoBehaviour
 {
-    public float speed = 5.0f;
     Rigidbody rb;
     CharacterController controller;
-    public Animator KidAnimatorController = null;
-    public Animator UmbrellaAnimatorController = null;
-    public GameObject LhandTransform = null;
-    public GameObject Umbrella = null;
+    [SerializeField] Animator KidAnimatorController = null;
+    [SerializeField] Animator UmbrellaAnimatorController = null;
+    [SerializeField] GameObject LhandTransform = null;
+    [SerializeField] GameObject Umbrella = null;
 
     bool idle = true;
+    float speed = 5.0f;
 
     void Start()
     {

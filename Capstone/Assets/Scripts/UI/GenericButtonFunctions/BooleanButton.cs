@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class BooleanButton : MonoBehaviour
 {
+    [SerializeField] Animator click = null;
+    [SerializeField] string animationName = "";
+
     public bool isOn = false;
-    public Animator click = null;
-    public string animationName = "";
 
     public void Start()
     {

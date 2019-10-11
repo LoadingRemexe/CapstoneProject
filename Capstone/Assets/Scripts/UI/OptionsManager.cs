@@ -5,10 +5,10 @@ using UnityEngine.Audio;
 
 public class OptionsManager : MonoBehaviour
 {
-    public AudioMixer audioMixer = null;
-    public DialMove dial_Control = null;
-    public SliderMove slider_Control = null;
-    public BooleanButton switch_Control = null;
+    [SerializeField] AudioMixer audioMixer = null;
+    [SerializeField] DialMove dial_Control = null;
+    [SerializeField] SliderMove slider_Control = null;
+    [SerializeField] BooleanButton switch_Control = null;
     
 
     // Start is called before the first frame update
@@ -20,9 +20,9 @@ public class OptionsManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        audioMixer.SetFloat("Ambience_Volume", slider_Control.SliderValue);
-        audioMixer.SetFloat("SFX_Volume", dial_Control.DialValue);
-        float MasterVolume = (switch_Control.isOn) ? 1.0f: 0.01f;
-        audioMixer.SetFloat("Master_Volume", MasterVolume);
+      //  audioMixer.SetFloat("Ambience_Volume", slider_Control.SliderValue);
+      //  audioMixer.SetFloat("SFX_Volume", dial_Control.DialValue);
+      //  float MasterVolume = (switch_Control.isOn) ? 1.0f: 0.01f;
+      //  audioMixer.SetFloat("Master_Volume", MasterVolume);
     }
 }

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PortalTeleporter : MonoBehaviour
 {
-    public Transform player;
-    public Transform reciever;
-    public bool portalFlipped = true;
+    [SerializeField] Transform player;
+    [SerializeField] Transform reciever;
+    [SerializeField] bool portalFlipped = true;
 
     private bool playerIsOverlapping = false;
     void Update()

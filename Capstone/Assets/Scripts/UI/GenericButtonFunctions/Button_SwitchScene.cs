@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Button_SwitchScene : MonoBehaviour
 {
-    public string SceneName = "";
+    [SerializeField] string SceneName = "";
     public void SceneButtonClicked()
     {
         SceneManager.LoadScene(SceneName);

@@ -1,46 +1,38 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.AI;
+﻿using UnityEngine;
 
-public class ParaBearPlayerSight : StateMachineBehaviour
+public class ParaBearEscape : StateMachineBehaviour
 {
-    NavMeshAgent nma;
-    PlayerMove pm;
-
+    ParaBearController pbc;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        nma = animator.GetComponent<NavMeshAgent>();
-        pm = FindObjectOfType<PlayerMove>();
+        Debug.Log("Escape Mode");
 
+        pbc = animator.GetComponent<ParaBearController>();
+        animator.SetBool("HidingScarf", true);
+        pbc.navMeshAgent.SetDestination(FindObjectOfType<FacilityBuilding>().Exit.position);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Vector3 direction = pm.transform.position - animator.transform.position;
-        Ray ray = new Ray(animator.transform.position + Vector3.up, direction);
+        Ray ray = new Ray(animator.transform.position, animator.transform.forward);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
         {
-            if (!hit.collider.CompareTag("Player"))
+            if (hit.collider.GetComponentInParent<DoorBehavior>())
             {
-                animator.SetTrigger("Idle");
-                Debug.Log("Lost Sight Of Player");
-            } 
+                //Open door if it finds it
+                hit.collider.GetComponentInParent<DoorBehavior>().OpenDoor();
+            }
         }
-
-        nma.SetDestination(pm.transform.position);
-        animator.SetFloat("Speed", nma.speed);
-
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        nma.destination = nma.transform.position;
+        animator.SetBool("HidingScarf", false);
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
