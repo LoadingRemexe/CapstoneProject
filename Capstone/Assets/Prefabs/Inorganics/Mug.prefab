@@ -54,6 +54,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -87,13 +88,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6975579787642030446}
+  - component: {fileID: 3639305666974384530}
+  - component: {fileID: 7736864480787701124}
   - component: {fileID: 3757290699147184766}
   - component: {fileID: 3576356919341763887}
   - component: {fileID: 548558003900108367}
   - component: {fileID: 7283161543979756731}
   - component: {fileID: 939947320335545996}
-  - component: {fileID: 5185424906804083348}
-  - component: {fileID: 3639305666974384530}
   m_Layer: 0
   m_Name: Mug
   m_TagString: Untagged
@@ -116,6 +117,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3639305666974384530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8382016407912690175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07406008ccb735a4696cff3f7493338d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionSFX: {fileID: 939947320335545996}
+  UsableObjectFunction:
+    m_PersistentCalls:
+      m_Calls: []
+  isHeld: 0
+--- !u!114 &7736864480787701124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8382016407912690175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 390aa6be742ec0f4789830a81c5294d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnHover: {fileID: 2779449200116997891}
 --- !u!33 &3757290699147184766
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -138,6 +169,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -288,43 +320,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &5185424906804083348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8382016407912690175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a19b57fabe6acc0489b39c0254429f11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InteractActivate:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: PickUpObject
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 3639305666974384530}
-          m_ObjectArgumentAssemblyTypeName: Carryable, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnHover: {fileID: 2779449200116997891}
---- !u!114 &3639305666974384530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8382016407912690175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07406008ccb735a4696cff3f7493338d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collisionSFX: {fileID: 939947320335545996}

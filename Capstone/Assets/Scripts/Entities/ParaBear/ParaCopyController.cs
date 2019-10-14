@@ -47,13 +47,8 @@ public class ParaCopyController : MonoBehaviour
     public void PlayerTouched()
     {
         Destroy(gameObject);
-    }
-
-    private void OnDestroy()
-    {
-        Instantiate(Baby,transform,true);
-        GameObject particles = Instantiate(Particles, transform, true) as GameObject;
+        Instantiate(Baby, transform.position, transform.rotation, null);
+        GameObject particles = Instantiate(Particles, transform.position, transform.rotation, null);
         Destroy(particles, 2.0f);
     }
-
 }

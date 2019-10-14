@@ -3091,7 +3091,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Neck/RScarf1
+    path: Neck/LScarf1
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -3101,7 +3101,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Neck/RScarf1
+    path: Neck/LScarf1
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -3111,7 +3111,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Neck/RScarf1
+    path: Neck/LScarf1
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -3121,7 +3121,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Neck/LScarf1
+    path: Neck/RScarf1/RScarf2/RScarf3/RScarf4/RScarf5/RScarf6
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -3131,7 +3131,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Neck/LScarf1
+    path: Neck/RScarf1/RScarf2/RScarf3/RScarf4/RScarf5/RScarf6
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -3141,7 +3141,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Neck/LScarf1
+    path: Neck/RScarf1/RScarf2/RScarf3/RScarf4/RScarf5/RScarf6
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -3241,7 +3241,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Neck/RScarf1/RScarf2/RScarf3/RScarf4/RScarf5/RScarf6
+    path: Neck/RScarf1
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -3251,7 +3251,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Neck/RScarf1/RScarf2/RScarf3/RScarf4/RScarf5/RScarf6
+    path: Neck/RScarf1
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -3261,7 +3261,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Neck/RScarf1/RScarf2/RScarf3/RScarf4/RScarf5/RScarf6
+    path: Neck/RScarf1
     classID: 4
     script: {fileID: 0}
   m_HasGenericRootTransform: 0

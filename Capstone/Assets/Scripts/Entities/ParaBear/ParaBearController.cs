@@ -6,7 +6,6 @@ public class ParaBearController : MonoBehaviour
 {
     [SerializeField] public ContainmentRoom containmentRoom;
     [SerializeField] List<GameObject> eyes = null;
-    [SerializeField] Transform LeftScarfEnd;
     public Animator animator;
     public PlayerMove playerMove;
     public NavMeshAgent navMeshAgent;

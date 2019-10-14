@@ -11,9 +11,10 @@ public class PlayerMove : MonoBehaviour
     public float SightDistance = 5.0f;
 
     float lookVertical = 0.0f;
-    Carryable heldObject = null;
+    public Carryable heldObject = null;
 
     Rigidbody rb;
+    public GameObject objectInSight = null;
 
     void Start()
     {
@@ -27,45 +28,77 @@ public class PlayerMove : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.None;
         }
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            ToggleInteract();
-        }
-        if (Input.GetKeyDown(KeyCode.Mouse1))
-        {
-            DropObject();
-        }
 
-        if (Input.GetAxis("Mouse ScrollWheel") > 0 && heldObject)
-        {
-            heldObject.transform.Rotate(Vector3.one * 15f, Space.World);
-        }
-        if (Input.GetAxis("Mouse ScrollWheel") < 0 && heldObject)
-        {
-            heldObject.transform.Rotate(Vector3.one * -15f, Space.World);
-        }
-    }
-
-    public void ToggleInteract() 
-    {
-        Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
+        Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit, SightDistance))
         {
-            Interactable interactable = hit.collider.GetComponent<Interactable>();
-
-            if (interactable != null)
+            objectInSight = hit.collider.gameObject;
+            if (objectInSight.GetComponent<HoverObject>())
             {
-                interactable.Interact();
-                //Debug.Log("Intracted with " + interactable.name);
+                objectInSight.GetComponent<HoverObject>().OnHover.SetActive(true);
             }
+        } else
+        {
+            objectInSight = null;
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            ToggleInteract();
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            DropObject();
+            TogglePickup();
+        }
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            if (heldObject && heldObject.UsableObjectFunction != null)
+            {
+                heldObject.UsableObjectFunction.Invoke();
+            }
+        }
+
+
+
+        if (Input.GetAxis("Mouse ScrollWheel") > 0 && heldObject)
+        {
+            heldObject.transform.Rotate(Vector3.up * 15f, Space.World);
+        }
+        if (Input.GetAxis("Mouse ScrollWheel") < 0 && heldObject)
+        {
+            heldObject.transform.Rotate(Vector3.up * -15f, Space.World);
+        }
+    }
+
+    public void ToggleInteract()
+    {
+        Interactable interactable = objectInSight.GetComponent<Interactable>();
+        if (interactable != null)
+        {
+            interactable.Interact();
+            //Debug.Log("Intracted with " + interactable.name);
+        }
+
+    }
+
+    public void TogglePickup()
+    {
+        Carryable carry = objectInSight.GetComponent<Carryable>();
+        if (carry != null)
+        {
+            carry.PickupObject();
+            //Debug.Log("picked up" + carry.name);
         }
     }
 
     public void PickUpObject(Carryable carryObj)
     {
         DropObject();
+
         heldObject = carryObj;
         PlayerHand.rotation = Quaternion.identity;
         carryObj.transform.parent = PlayerHand;

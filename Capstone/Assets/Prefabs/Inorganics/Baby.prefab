@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3028949650312874264}
+  - component: {fileID: 7901039454460065690}
+  - component: {fileID: 6360295173098917799}
   - component: {fileID: 6921705004556405446}
   - component: {fileID: 5348689460247196066}
   - component: {fileID: 2735465478179885662}
   - component: {fileID: 1088120146399825152}
-  - component: {fileID: 5240852829356175739}
-  - component: {fileID: 7901039454460065690}
   - component: {fileID: 8512799730476791545}
   m_Layer: 0
   m_Name: Baby
@@ -38,6 +38,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 22.377, z: 0}
+--- !u!114 &7901039454460065690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2715582585180396854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07406008ccb735a4696cff3f7493338d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionSFX: {fileID: 8512799730476791545}
+  UsableObjectFunction:
+    m_PersistentCalls:
+      m_Calls: []
+  isHeld: 0
+--- !u!114 &6360295173098917799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2715582585180396854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 390aa6be742ec0f4789830a81c5294d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnHover: {fileID: 8551229299653449939}
 --- !u!33 &6921705004556405446
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -115,46 +145,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5240852829356175739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2715582585180396854}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a19b57fabe6acc0489b39c0254429f11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InteractActivate:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7901039454460065690}
-        m_MethodName: PickupObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnHover: {fileID: 8551229299653449939}
---- !u!114 &7901039454460065690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2715582585180396854}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07406008ccb735a4696cff3f7493338d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collisionSFX: {fileID: 8512799730476791545}
 --- !u!82 &8512799730476791545
 AudioSource:
   m_ObjectHideFlags: 0
