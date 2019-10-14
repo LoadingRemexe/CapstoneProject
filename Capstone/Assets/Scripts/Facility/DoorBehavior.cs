@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DoorBehavior : MonoBehaviour
 {
+    [SerializeField] AudioSource DoorSFX;
     public bool isUnlocked = true;
     public bool isOpen = false;
     Animator animator;
@@ -28,6 +29,8 @@ public class DoorBehavior : MonoBehaviour
     {
         if (isUnlocked)
         {
+            if (DoorSFX) DoorSFX.Play();
+
             isOpen = !isOpen;
             if (animator) animator.SetBool("isOpen", isOpen);
         }
@@ -37,12 +40,16 @@ public class DoorBehavior : MonoBehaviour
     {
         if (isUnlocked)
         {
+            if (DoorSFX) DoorSFX.Play();
+
             isOpen = true;
             if (animator) animator.SetBool("isOpen", isOpen);
         }
     }
     public void CloseDoor()
     {
+        if (DoorSFX) DoorSFX.Play();
+
         isOpen = false;
         if (animator) animator.SetBool("isOpen", isOpen);
     }

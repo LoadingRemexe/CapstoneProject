@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3899471164626982708}
   - component: {fileID: 3899471164626982706}
   - component: {fileID: 3899471164626982707}
+  - component: {fileID: 9153159391809492592}
   m_Layer: 0
   m_Name: DoorHeavy
   m_TagString: Untagged
@@ -47,6 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1c1f1b07848d541aed8ba930f78c99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorSFX: {fileID: 9153159391809492592}
   isUnlocked: 1
   isOpen: 0
 --- !u!95 &3899471164626982707
@@ -68,6 +70,102 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!82 &9153159391809492592
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3899471164626982709}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: ff6403e74b0d55d459df46fcb571b821, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 0.1
+  MaxDistance: 5
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &3899471164883045519
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,11 +204,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3899471164626982708}
     m_Modifications:
-    - target: {fileID: 3889030179271238752, guid: e3941185eadf6cc4298c75ba6d38b8f9,
-        type: 3}
-      propertyPath: m_Name
-      value: GenericButton
-      objectReference: {fileID: 0}
     - target: {fileID: 8107086918770372696, guid: e3941185eadf6cc4298c75ba6d38b8f9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -181,6 +274,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.100000076
       objectReference: {fileID: 0}
+    - target: {fileID: 3889030179271238752, guid: e3941185eadf6cc4298c75ba6d38b8f9,
+        type: 3}
+      propertyPath: m_Name
+      value: GenericButton
+      objectReference: {fileID: 0}
     - target: {fileID: 3889030179271238781, guid: e3941185eadf6cc4298c75ba6d38b8f9,
         type: 3}
       propertyPath: InteractActivate.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -206,10 +304,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3899471164883045518}
     m_Modifications:
-    - target: {fileID: 1514489277716338, guid: 24f3bfb6ffbd4e449a23c62225e14873, type: 3}
-      propertyPath: m_Name
-      value: Gen_Door_01_snaps002
-      objectReference: {fileID: 0}
     - target: {fileID: 4151980975440356, guid: 24f3bfb6ffbd4e449a23c62225e14873, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.07
@@ -254,15 +348,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 33503550048378038, guid: 24f3bfb6ffbd4e449a23c62225e14873,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 64191210410734664, guid: 24f3bfb6ffbd4e449a23c62225e14873,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
+    - target: {fileID: 1514489277716338, guid: 24f3bfb6ffbd4e449a23c62225e14873, type: 3}
+      propertyPath: m_Name
+      value: Gen_Door_01_snaps002
       objectReference: {fileID: 0}
     - target: {fileID: 512521095481098229, guid: 24f3bfb6ffbd4e449a23c62225e14873,
         type: 3}
@@ -384,6 +472,16 @@ PrefabInstance:
       propertyPath: m_Tangents.Array.data[138].y
       value: 0.49996114
       objectReference: {fileID: 0}
+    - target: {fileID: 33503550048378038, guid: 24f3bfb6ffbd4e449a23c62225e14873,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 64191210410734664, guid: 24f3bfb6ffbd4e449a23c62225e14873,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24f3bfb6ffbd4e449a23c62225e14873, type: 3}
 --- !u!4 &3896586098288269769 stripped
@@ -399,11 +497,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3899471164626982708}
     m_Modifications:
-    - target: {fileID: 3889030179271238752, guid: e3941185eadf6cc4298c75ba6d38b8f9,
-        type: 3}
-      propertyPath: m_Name
-      value: GenericButton (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 8107086918770372696, guid: e3941185eadf6cc4298c75ba6d38b8f9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -473,6 +566,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.100000076
+      objectReference: {fileID: 0}
+    - target: {fileID: 3889030179271238752, guid: e3941185eadf6cc4298c75ba6d38b8f9,
+        type: 3}
+      propertyPath: m_Name
+      value: GenericButton (1)
       objectReference: {fileID: 0}
     - target: {fileID: 3889030179271238781, guid: e3941185eadf6cc4298c75ba6d38b8f9,
         type: 3}

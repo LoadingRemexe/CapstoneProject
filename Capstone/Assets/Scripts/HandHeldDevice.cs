@@ -5,6 +5,7 @@ using UnityEngine;
 public class HandHeldDevice : MonoBehaviour
 {
     [SerializeField] Transform pointer;
+    [SerializeField] AudioSource ActivatedSFX;
     [SerializeField] LineRenderer laserLineRenderer;
     [SerializeField] LayerMask entityLayer;
     Carryable c;
@@ -23,6 +24,7 @@ public class HandHeldDevice : MonoBehaviour
     {
         c = GetComponent<Carryable>();
         p = FindObjectOfType<PlayerMove>();
+        if (ActivatedSFX) ActivatedSFX.Stop();
 
         Vector3[] initLaserPositions = new Vector3[2] { Vector3.zero, Vector3.zero };
         laserLineRenderer.SetPositions(initLaserPositions);
@@ -68,6 +70,8 @@ public class HandHeldDevice : MonoBehaviour
                         a.SetBool("Retreive", true);
                         entityRetreiving = raycastHit.collider.gameObject;
                         Debug.Log("Retreival Successful");
+                        if (ActivatedSFX) ActivatedSFX.Play();
+
                     }
                 }
             }
@@ -76,6 +80,8 @@ public class HandHeldDevice : MonoBehaviour
             entityRetreiving.GetComponentInParent<Animator>().SetBool("Retreive", false);
             Debug.Log("DeActivate Retreive");
             entityRetreiving = null;
+            if (ActivatedSFX) ActivatedSFX.Stop();
+
         }
     }
     void DrawLaser(Vector3 targetPosition, Vector3 direction, float length)
