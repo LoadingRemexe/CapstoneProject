@@ -2,11 +2,11 @@
 
 public class PlayerMove : MonoBehaviour
 {
-    [SerializeField] Camera playerCamera = null;
+    [SerializeField] public Camera playerCamera = null;
     [SerializeField] Transform PlayerHand;
 
     float limitY = 60.0f;
-    float cameraSmooth = 10.0f;
+    float cameraSmooth = 30.0f;
     float speed = 10.0f;
     public float SightDistance = 5.0f;
 
