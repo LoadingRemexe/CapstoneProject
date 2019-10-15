@@ -6,8 +6,8 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] Transform PlayerHand;
 
     float limitY = 60.0f;
-    float cameraSmooth = 30.0f;
-    float speed = 10.0f;
+    public float cameraSmooth = 30.0f;
+    public float speed = 10.0f;
     public float SightDistance = 5.0f;
 
     float lookVertical = 0.0f;
@@ -66,32 +66,37 @@ public class PlayerMove : MonoBehaviour
 
         if (Input.GetAxis("Mouse ScrollWheel") > 0 && heldObject)
         {
-            heldObject.transform.Rotate(Vector3.up * 15f, Space.World);
+            PlayerHand.transform.Rotate(Vector3.up, 15f);
         }
         if (Input.GetAxis("Mouse ScrollWheel") < 0 && heldObject)
         {
-            heldObject.transform.Rotate(Vector3.up * -15f, Space.World);
+            PlayerHand.transform.Rotate(Vector3.up, -15f);
         }
     }
 
     public void ToggleInteract()
     {
-        Interactable interactable = objectInSight.GetComponent<Interactable>();
-        if (interactable != null)
+        if (objectInSight)
         {
-            interactable.Interact();
-            //Debug.Log("Intracted with " + interactable.name);
+            Interactable interactable = objectInSight.GetComponent<Interactable>();
+            if (interactable != null)
+            {
+                interactable.Interact();
+                //Debug.Log("Intracted with " + interactable.name);
+            }
         }
-
     }
 
     public void TogglePickup()
     {
-        Carryable carry = objectInSight.GetComponent<Carryable>();
-        if (carry != null)
+        if (objectInSight)
         {
-            carry.PickupObject();
-            //Debug.Log("picked up" + carry.name);
+            Carryable carry = objectInSight.GetComponent<Carryable>();
+            if (carry != null)
+            {
+                carry.PickupObject();
+                //Debug.Log("picked up" + carry.name);
+            }
         }
     }
 
@@ -100,7 +105,7 @@ public class PlayerMove : MonoBehaviour
         DropObject();
 
         heldObject = carryObj;
-        PlayerHand.rotation = Quaternion.identity;
+        PlayerHand.localRotation = Quaternion.identity;
         carryObj.transform.parent = PlayerHand;
     }
 

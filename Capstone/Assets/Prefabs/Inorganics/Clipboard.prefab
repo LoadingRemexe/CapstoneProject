@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4688697005123718153}
   - component: {fileID: 8756902030031554741}
   - component: {fileID: 6735523073138940718}
-  - component: {fileID: 4147172277745166482}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -80,19 +79,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &4147172277745166482
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 246690383030415700}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6549276254998415702
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,7 +235,8 @@ AudioSource:
   m_GameObject: {fileID: 6549276254998415702}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -5619457106141512643, guid: a113ab355df150e43acac8ac12fa187f,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: a36d3559d1b38dd4b912f686c8625868, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1

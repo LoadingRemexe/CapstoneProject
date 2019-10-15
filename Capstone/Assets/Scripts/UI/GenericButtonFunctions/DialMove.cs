@@ -7,11 +7,8 @@ public class DialMove : MonoBehaviour
 {
 
     [SerializeField] Transform Dial = null;
-    [SerializeField] float valueRate = 0.001f;
-
-    [SerializeField] float DialValue = 0.5f;
-    [SerializeField] TextMeshProUGUI ValueReadout= null;
-
+    [SerializeField] float valueRate = 2f;
+    [SerializeField] public float Value = 0.5f;
 
     bool active = false;
 
@@ -19,22 +16,16 @@ public class DialMove : MonoBehaviour
     {
         if (Input.GetMouseButton(0) && active)
         {
-            Debug.Log(Input.GetAxis("Mouse X"));
-
-            Dial.Rotate(0, (Input.GetAxis("Mouse X") *2), 0, Space.Self);
+            Dial.Rotate(0, (Input.GetAxis("Mouse X") * valueRate), 0, Space.Self);
 
         }
         if (!Input.GetMouseButton(0) && active)
         {
             active = false;
         }
-        DialValue =( (Dial.rotation.y / 3.6f)* 2 + 0.5f);
+        Value = ( (Dial.rotation.y / 3.6f)* 2 + 0.5f);
 
-        DialValue = Mathf.Clamp01(DialValue);
-        if (ValueReadout)
-        {
-            ValueReadout.text = DialValue.ToString("0.00");
-        }
+        Value = Mathf.Clamp01(Value);
     }
 
     public void ClickDown()

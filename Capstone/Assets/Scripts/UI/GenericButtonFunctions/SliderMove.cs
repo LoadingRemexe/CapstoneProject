@@ -6,9 +6,9 @@ using UnityEngine;
 public class SliderMove : MonoBehaviour
 {
     [SerializeField] Transform Slider = null;
+    [SerializeField] public bool leftRight = true;
 
-    [SerializeField] float SliderValue = 0.5f;
-    [SerializeField] TextMeshProUGUI ValueReadout = null;
+    public float Value = 0.5f;
 
     bool active = false;
 
@@ -16,8 +16,14 @@ public class SliderMove : MonoBehaviour
     {
         if (Input.GetMouseButton(0) && active)
         {
-
-            Slider.localPosition += new Vector3(-Input.GetAxis("Mouse X")/10, 0, 0);
+            if (leftRight)
+            {
+                Slider.localPosition += new Vector3(Input.GetAxis("Mouse X") / 10, 0, 0);
+            }
+            else
+            {
+                Slider.localPosition += new Vector3(Input.GetAxis("Mouse Y") / 10, 0, 0);
+            }
             Slider.localPosition = new Vector3(Mathf.Clamp(Slider.localPosition.x, -1.3f, 1.3f), Slider.localPosition.y, Slider.localPosition.z);
 
         }
@@ -25,13 +31,8 @@ public class SliderMove : MonoBehaviour
         {
             active = false;
         }
-        SliderValue = (Slider.localPosition.x / 1.3f)/2 + 0.5f;
+        Value = (Slider.localPosition.x / 1.3f)/2 + 0.5f;
        // Debug.Log("Value = " +SliderValue);
-
-        if (ValueReadout)
-        {
-            ValueReadout.text = SliderValue.ToString("0.00");
-        }
     }
 
     public void ClickDown()

@@ -5,6 +5,7 @@ using UnityEngine;
 public class FacilityBuilding : MonoBehaviour
 {
     [SerializeField] public Transform Exit;
+    [SerializeField] public Switch_Toggle LockDownSwitch;
     public bool onLockdown;
 
     // Start is called before the first frame update
@@ -22,6 +23,24 @@ public class FacilityBuilding : MonoBehaviour
     public void SetLockdown(bool lockdown)
     {
         onLockdown = lockdown;
-        Debug.Log("Lockdown set to " + lockdown);
+        Light[] lights = FindObjectsOfType<Light>();
+        foreach(Light  l in lights)
+        {
+            l.color = (onLockdown) ? Color.red : Color.white;
+        }
+        Debug.Log("Lockdown set to " + onLockdown);
+        LockDownSwitch.SetSwitch(onLockdown);
+    }
+
+    public void InvertLockdown()
+    {
+        onLockdown = !onLockdown;
+        Light[] lights = FindObjectsOfType<Light>();
+        foreach (Light l in lights)
+        {
+            l.color = (onLockdown) ? Color.red : Color.white;
+        }
+        Debug.Log("Lockdown set to " + onLockdown);
+        LockDownSwitch.SetSwitch(onLockdown);
     }
 }
