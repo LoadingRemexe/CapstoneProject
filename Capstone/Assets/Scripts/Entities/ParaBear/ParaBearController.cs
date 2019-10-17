@@ -4,9 +4,9 @@ using UnityEngine.AI;
 
 public class ParaBearController : MonoBehaviour
 {
-    [SerializeField] public ContainmentRoom containmentRoom;
     [SerializeField] List<GameObject> eyes = null;
     public Animator animator;
+    public EntityBasic entityBasic;
     public PlayerMove playerMove;
     public NavMeshAgent navMeshAgent;
 
@@ -17,6 +17,7 @@ public class ParaBearController : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        entityBasic = GetComponent<EntityBasic>();
         playerMove = FindObjectOfType<PlayerMove>();
         navMeshAgent = GetComponent<NavMeshAgent>();
     }

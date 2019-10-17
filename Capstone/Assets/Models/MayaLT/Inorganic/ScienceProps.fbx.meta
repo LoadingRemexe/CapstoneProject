@@ -8,42 +8,42 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: BlackMetalic
-    second: {fileID: 2100000, guid: 2d70bba3a21e36f41b4c3ca6cf9b5871, type: 2}
+    second: {fileID: 2100000, guid: 9072475b36fc636459efce8f8d32c8bb, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: CorkboardTexture
-    second: {fileID: 2100000, guid: 8be949666cd513048965b167c11c0a30, type: 2}
+    second: {fileID: 2100000, guid: c941dff962fb3104d8e67bf6ffb53878, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: GreyMetalic
-    second: {fileID: 2100000, guid: a8888097f63eff0438206dfeb969cf38, type: 2}
+    second: {fileID: 2100000, guid: a00cd4d52c480954183e8dd7a7405d8b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: White
-    second: {fileID: 2100000, guid: 41cdac60ad5be2442bc033e3e01a82db, type: 2}
+    second: {fileID: 2100000, guid: 168aab2483ee6dc44ba25cb812280fc3, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: black
-    second: {fileID: 2100000, guid: 977719e99d1332c46bc8c18f445487f2, type: 2}
+    second: {fileID: 2100000, guid: 061ef6a6554bf654883aa2b1da23c6e9, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: grey
-    second: {fileID: 2100000, guid: c48aa4d64bcf1bb4893cccb27c8bb136, type: 2}
+    second: {fileID: 2100000, guid: b690d153c17501b48af3d6c9d2d0ee45, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: phong1
-    second: {fileID: 2100000, guid: 79e3b718de8ac0c478dcc88652b9996e, type: 2}
+    second: {fileID: 2100000, guid: 0e780cb470d925b4eb3224ca6afd8a41, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: tan
-    second: {fileID: 2100000, guid: 141362d895b2f21419dbefd1e1fb34c5, type: 2}
+    second: {fileID: 2100000, guid: ca746060c4e57204280827a2f05866b4, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -126,7 +126,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   avatarSetup: 0
   additionalBone: 0

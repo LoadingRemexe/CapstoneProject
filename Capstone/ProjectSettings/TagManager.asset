@@ -18,9 +18,9 @@ TagManager:
   - PostProcessingMain
   - PostProcessingSecurity
   - Entity
-  - 
-  - 
-  - 
+  - EuclideanVoid
+  - DetectsEntitiesAndPlayers
+  - Player
   - 
   - 
   - 

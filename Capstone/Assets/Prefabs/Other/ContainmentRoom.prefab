@@ -377,7 +377,7 @@ GameObject:
   - component: {fileID: 4977446212778197865}
   - component: {fileID: 4977446212778197878}
   - component: {fileID: 9182454869312049230}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: ContainmentRoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -451,11 +451,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4977446212778197865}
     m_Modifications:
-    - target: {fileID: 837455638943252090, guid: ee482aa5955869d4b86b4a6fa1065651,
-        type: 3}
-      propertyPath: screen
-      value: 
-      objectReference: {fileID: 4804624512004760676}
     - target: {fileID: 8387026363654092389, guid: ee482aa5955869d4b86b4a6fa1065651,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -511,16 +506,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2881792135227862121, guid: ee482aa5955869d4b86b4a6fa1065651,
+    - target: {fileID: 8104746672092240040, guid: ee482aa5955869d4b86b4a6fa1065651,
         type: 3}
-      propertyPath: m_Layer
-      value: 9
+      propertyPath: m_LocalPosition.y
+      value: -0.853
       objectReference: {fileID: 0}
     - target: {fileID: 6877663488023886671, guid: ee482aa5955869d4b86b4a6fa1065651,
         type: 3}
       propertyPath: m_Name
       value: Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 837455638943252090, guid: ee482aa5955869d4b86b4a6fa1065651,
+        type: 3}
+      propertyPath: screen
+      value: 
+      objectReference: {fileID: 4804624512004760676}
     - target: {fileID: 5665439369675973087, guid: ee482aa5955869d4b86b4a6fa1065651,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -535,6 +535,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.145
+      objectReference: {fileID: 0}
+    - target: {fileID: 2881792135227862121, guid: ee482aa5955869d4b86b4a6fa1065651,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796916699695906203, guid: ee482aa5955869d4b86b4a6fa1065651,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 316991313151560532, guid: fe0a1eb6b4acd0a4e81429540a84357f,
+        type: 3}
+    - target: {fileID: 1991090451, guid: ee482aa5955869d4b86b4a6fa1065651, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952306097378794710, guid: ee482aa5955869d4b86b4a6fa1065651,
+        type: 3}
+      propertyPath: InteractActivate.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2686347517266049456}
+    - target: {fileID: 7952306097378794710, guid: ee482aa5955869d4b86b4a6fa1065651,
+        type: 3}
+      propertyPath: InteractActivate.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FixCamera
       objectReference: {fileID: 0}
     - target: {fileID: 5787526796801275058, guid: ee482aa5955869d4b86b4a6fa1065651,
         type: 3}
@@ -1626,7 +1651,7 @@ PrefabInstance:
     - target: {fileID: 3731400491304223598, guid: 3b2773662fe9f0341a722a8beaa4c9be,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.5
+      value: -2.471
       objectReference: {fileID: 0}
     - target: {fileID: 3731400491304223598, guid: 3b2773662fe9f0341a722a8beaa4c9be,
         type: 3}
@@ -1985,7 +2010,7 @@ PrefabInstance:
     - target: {fileID: 220441689246529091, guid: 77b92fda819d87e4287c317e303800c7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5
+      value: 0.528
       objectReference: {fileID: 0}
     - target: {fileID: 220441689246529091, guid: 77b92fda819d87e4287c317e303800c7,
         type: 3}

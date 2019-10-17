@@ -34,6 +34,7 @@ public class HandHeldDevice : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (ViewLine)
         {
             DrawLaser(pointer.position, pointer.forward, laserMaxLength);
@@ -44,9 +45,15 @@ public class HandHeldDevice : MonoBehaviour
             laserLineRenderer.enabled = false;
         }
 
-        if (entityRetreiving)
+        if (entityRetreiving && c.isHeld)
         {
             entityRetreiving.transform.position = Vector3.Lerp(pointer.position + pointer.forward, entityRetreiving.transform.position, Time.deltaTime);
+        } else if (!c.isHeld && entityRetreiving)
+        {
+            entityRetreiving.GetComponentInParent<Animator>().SetBool("Retreive", false);
+            Debug.Log("DeActivate Retreive");
+            entityRetreiving = null;
+            if (ActivatedSFX) ActivatedSFX.Stop();
         }
     }
 

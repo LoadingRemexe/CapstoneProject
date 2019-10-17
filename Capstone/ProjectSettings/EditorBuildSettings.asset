@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Facility.unity
+    guid: 392d8ec1e24f4db4189a5271647792c3
+  - enabled: 1
+    path: Assets/Scenes/ParaBearContainmentRoom.unity
+    guid: 147a533301e775d418f6ea5aa5d8105f
+  - enabled: 1
+    path: Assets/Scenes/ParaBearContainmentRoomEmpty.unity
+    guid: a508d7f0cf075184a9cf13fdbe9b3a71
   m_configObjects: {}

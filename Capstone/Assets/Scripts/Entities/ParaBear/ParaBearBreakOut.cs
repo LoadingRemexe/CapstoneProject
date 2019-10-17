@@ -12,7 +12,7 @@ public class ParaBearBreakOut : StateMachineBehaviour
         Debug.Log("BreakOut Mode");
 
         pbc = animator.GetComponent<ParaBearController>();
-        pbc.containmentRoom.securityCam.BreakCamera();
+        pbc.entityBasic.containmentRoom.securityCam.BreakCamera();
         for (int i = 0; i < pbc.BabesConsumed; i++)
         {
             Instantiate(paraCopy, animator.transform.position, animator.transform.rotation, null);

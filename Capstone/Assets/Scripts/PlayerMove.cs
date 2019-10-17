@@ -4,6 +4,8 @@ public class PlayerMove : MonoBehaviour
 {
     [SerializeField] public Camera playerCamera = null;
     [SerializeField] Transform PlayerHand;
+    [SerializeField] LayerMask sightLayerMask;
+
 
     float limitY = 60.0f;
     public float cameraSmooth = 30.0f;
@@ -32,12 +34,13 @@ public class PlayerMove : MonoBehaviour
         Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, SightDistance))
+        if (Physics.Raycast(ray, out hit, SightDistance, sightLayerMask))
         {
             objectInSight = hit.collider.gameObject;
-            if (objectInSight.GetComponent<HoverObject>())
+            HoverObject h = objectInSight.GetComponent<HoverObject>();
+            if (h)
             {
-                objectInSight.GetComponent<HoverObject>().OnHover.SetActive(true);
+                h.OnHover.SetActive(true);
             }
         } else
         {

@@ -9,7 +9,7 @@ public class HoverObject : MonoBehaviour
     public void Start()
     {
         pm = FindObjectOfType<PlayerMove>();
-            OnHover.SetActive(false);
+        OnHover.SetActive(false);
     }
 
     public void Update()
