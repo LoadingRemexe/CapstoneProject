@@ -72,7 +72,7 @@ public class ParaBearBabySight : StateMachineBehaviour
          
         if (targetBaby)
         {
-            if (Vector3.Distance(pbc.navMeshAgent.transform.position, targetBaby.transform.position) < 0.5f && !targetBaby.GetComponent<Carryable>().isHeld) //check if it has reached the baby, and the baby isnt being held onto by player or other creature.
+            if (Vector3.Distance(pbc.navMeshAgent.transform.position, targetBaby.transform.position) < 0.25f && !targetBaby.GetComponent<Carryable>().isHeld) //check if it has reached the baby, and the baby isnt being held onto by player or other creature.
             {
                 Destroy(targetBaby);// destroy original 
                 pbc.navMeshAgent.SetDestination(pbc.transform.position);

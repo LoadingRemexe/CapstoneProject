@@ -383,6 +383,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 64457048562423822, guid: 79298396da72aeb4a9dbe792d38ccf1f,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 959558625918281608, guid: 79298396da72aeb4a9dbe792d38ccf1f,
         type: 3}
       propertyPath: m_Tangents.Array.data[10].x

@@ -26,10 +26,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1991090451}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.009000003, z: -0.071}
+  m_LocalPosition: {x: 0, y: -0.328, z: -0.13199997}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
-  m_Father: {fileID: 8104746672092240040}
+  m_Father: {fileID: 8387026363654092389}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1991090454
@@ -342,7 +342,7 @@ Transform:
   m_Children:
   - {fileID: 5665439369675973087}
   m_Father: {fileID: 8387026363654092389}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -36, y: -47, z: 0}
 --- !u!33 &3624236918835900486
 MeshFilter:
@@ -5158,9 +5158,6 @@ GameObject:
   - component: {fileID: 946563613002916510}
   - component: {fileID: 6781954828887301735}
   - component: {fileID: 1115601460004743748}
-  - component: {fileID: 3370525754490463791}
-  - component: {fileID: 8219392475804120322}
-  - component: {fileID: 2270465360022974284}
   m_Layer: 0
   m_Name: TechBox
   m_TagString: Untagged
@@ -5181,9 +5178,8 @@ Transform:
   m_Children:
   - {fileID: 3636492990176103887}
   - {fileID: 2196958175826594369}
-  - {fileID: 1991090452}
   m_Father: {fileID: 8387026363654092389}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &946563613002916510
 MeshFilter:
@@ -5248,58 +5244,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 316991313151560532, guid: fe0a1eb6b4acd0a4e81429540a84357f, type: 3}
---- !u!114 &3370525754490463791
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5053744602859743931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a19b57fabe6acc0489b39c0254429f11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InteractActivate:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 837455638943252090}
-        m_MethodName: FixCamera
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &8219392475804120322
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5053744602859743931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 390aa6be742ec0f4789830a81c5294d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnHover: {fileID: 1991090451}
---- !u!65 &2270465360022974284
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5053744602859743931}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.41281766, y: 0.53241503, z: 0.38943666}
-  m_Center: {x: 0.08165023, y: 0.016417846, z: -0.11785701}
 --- !u!1 &5369891492056120916
 GameObject:
   m_ObjectHideFlags: 0
@@ -5405,6 +5349,9 @@ GameObject:
   - component: {fileID: 8387026363654092389}
   - component: {fileID: 837455638943252090}
   - component: {fileID: 6151925500802507133}
+  - component: {fileID: 4735986212648644158}
+  - component: {fileID: 326880803270056603}
+  - component: {fileID: 2882149294433297849}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -5425,6 +5372,7 @@ Transform:
   m_Children:
   - {fileID: 2086454776536705852}
   - {fileID: 6121190244049814665}
+  - {fileID: 1991090452}
   - {fileID: 7836480094668858279}
   - {fileID: 8104746672092240040}
   m_Father: {fileID: 0}
@@ -5465,6 +5413,58 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &4735986212648644158
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6877663488023886671}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.32399386, y: 0.34616208, z: 0.30317008}
+  m_Center: {x: 0.00048276782, y: -0.32691896, z: -0.1697765}
+--- !u!114 &326880803270056603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6877663488023886671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a19b57fabe6acc0489b39c0254429f11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractActivate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 837455638943252090}
+        m_MethodName: FixCamera
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2882149294433297849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6877663488023886671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 390aa6be742ec0f4789830a81c5294d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnHover: {fileID: 1991090451}
 --- !u!1 &7667014918566852336
 GameObject:
   m_ObjectHideFlags: 0

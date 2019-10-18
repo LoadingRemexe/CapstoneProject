@@ -17,7 +17,7 @@ public class OptionsManager : MonoBehaviour
     
     PlayerMove pm;
     float sensitivitymax = 60.0f;
-    float speedmax = 20.0f;
+    float speedmax = 10.0f;
 
     // Start is called before the first frame update
     void Start()
