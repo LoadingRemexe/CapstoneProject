@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8972093070523168962}
   - component: {fileID: 8972093070523168972}
   - component: {fileID: 8972093070523168973}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 8972093070659150658}
   - component: {fileID: 8972093070659150668}
   - component: {fileID: 8972093070659150669}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Text (TMP) (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -321,7 +321,7 @@ GameObject:
   - component: {fileID: 8972093071235419184}
   - component: {fileID: 8972093071235419187}
   - component: {fileID: 8972093071235419186}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PlayerSpeed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -476,7 +476,7 @@ GameObject:
   - component: {fileID: 8972093071778002682}
   - component: {fileID: 8972093071778002628}
   - component: {fileID: 8972093071778002629}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Text (TMP) (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -630,7 +630,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8972093071886568513}
   - component: {fileID: 8972093071886568518}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: SettingsManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -688,7 +688,7 @@ GameObject:
   - component: {fileID: 8972093071922139291}
   - component: {fileID: 8972093071922139288}
   - component: {fileID: 8972093071922139289}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -792,7 +792,7 @@ GameObject:
   - component: {fileID: 8972093071954506812}
   - component: {fileID: 8972093071954506813}
   - component: {fileID: 8972093071954506802}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: CameraSensitivity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -947,7 +947,7 @@ GameObject:
   - component: {fileID: 8972093072085131283}
   - component: {fileID: 8972093072085131282}
   - component: {fileID: 8972093072085131293}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: VolumeReadout
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1102,7 +1102,7 @@ GameObject:
   - component: {fileID: 8972093072352957497}
   - component: {fileID: 8972093072352957499}
   - component: {fileID: 8972093072352957496}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1171,11 +1171,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8972093071886568513}
     m_Modifications:
-    - target: {fileID: 3858070561779105548, guid: d1b2be632554d56468d2eb0495b087af,
-        type: 3}
-      propertyPath: m_Name
-      value: SliderGeneric
-      objectReference: {fileID: 0}
     - target: {fileID: 275220287890050335, guid: d1b2be632554d56468d2eb0495b087af,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1246,10 +1241,35 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 3858070561779105548, guid: d1b2be632554d56468d2eb0495b087af,
+        type: 3}
+      propertyPath: m_Name
+      value: SliderGeneric
+      objectReference: {fileID: 0}
+    - target: {fileID: 3858070561779105548, guid: d1b2be632554d56468d2eb0495b087af,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7894502276398333334, guid: d1b2be632554d56468d2eb0495b087af,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073365282193386291, guid: d1b2be632554d56468d2eb0495b087af,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 3858070561779105546, guid: d1b2be632554d56468d2eb0495b087af,
         type: 3}
       propertyPath: leftRight
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6909952402469096806, guid: d1b2be632554d56468d2eb0495b087af,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1b2be632554d56468d2eb0495b087af, type: 3}
@@ -1348,10 +1368,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: ComputerMonitor
       objectReference: {fileID: 0}
+    - target: {fileID: 6754617237517385849, guid: f39bb3c31dc243448ab52e977fe67587,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 557888336660436092, guid: f39bb3c31dc243448ab52e977fe67587,
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 557888336660436092, guid: f39bb3c31dc243448ab52e977fe67587,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f39bb3c31dc243448ab52e977fe67587, type: 3}
@@ -1368,11 +1398,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8972093071886568513}
     m_Modifications:
-    - target: {fileID: 8514922016725995390, guid: c48fff3f201eb6e40994abbce2acaf71,
-        type: 3}
-      propertyPath: m_Name
-      value: DialGeneric
-      objectReference: {fileID: 0}
     - target: {fileID: 4643296622293155181, guid: c48fff3f201eb6e40994abbce2acaf71,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1443,10 +1468,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.10000001
       objectReference: {fileID: 0}
-    - target: {fileID: 8514922016725995386, guid: c48fff3f201eb6e40994abbce2acaf71,
+    - target: {fileID: 8514922016725995390, guid: c48fff3f201eb6e40994abbce2acaf71,
         type: 3}
-      propertyPath: valueRate
-      value: 4
+      propertyPath: m_Name
+      value: DialGeneric
       objectReference: {fileID: 0}
     - target: {fileID: 5270581431525512632, guid: c48fff3f201eb6e40994abbce2acaf71,
         type: 3}
@@ -1462,6 +1487,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8514922016725995386, guid: c48fff3f201eb6e40994abbce2acaf71,
+        type: 3}
+      propertyPath: valueRate
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1966983267787226359, guid: c48fff3f201eb6e40994abbce2acaf71,
         type: 3}
@@ -1605,11 +1635,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8972093071886568513}
     m_Modifications:
-    - target: {fileID: 3858070561779105548, guid: d1b2be632554d56468d2eb0495b087af,
-        type: 3}
-      propertyPath: m_Name
-      value: SliderGeneric (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 275220287890050335, guid: d1b2be632554d56468d2eb0495b087af,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1680,10 +1705,35 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 3858070561779105548, guid: d1b2be632554d56468d2eb0495b087af,
+        type: 3}
+      propertyPath: m_Name
+      value: SliderGeneric (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3858070561779105548, guid: d1b2be632554d56468d2eb0495b087af,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7894502276398333334, guid: d1b2be632554d56468d2eb0495b087af,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073365282193386291, guid: d1b2be632554d56468d2eb0495b087af,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 3858070561779105546, guid: d1b2be632554d56468d2eb0495b087af,
         type: 3}
       propertyPath: leftRight
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6909952402469096806, guid: d1b2be632554d56468d2eb0495b087af,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1b2be632554d56468d2eb0495b087af, type: 3}

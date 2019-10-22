@@ -6,6 +6,7 @@ public class ContainmentRoom : MonoBehaviour
 {
     [SerializeField] public SecurityCamera securityCam;
     [SerializeField] public GameObject containedEntity = null;
+    [SerializeField] public GameObject observationlight;
     [SerializeField] public DoorBehavior containmentDoor;
     [SerializeField] public DoorBehavior observationDoor;
 
@@ -26,6 +27,7 @@ public class ContainmentRoom : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             securityCam.camIsAwake = true;
+            observationlight.SetActive(true);
         }
     }
 
@@ -38,6 +40,7 @@ public class ContainmentRoom : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             securityCam.camIsAwake = false;
+            observationlight.SetActive(false);
         }
     }
 }

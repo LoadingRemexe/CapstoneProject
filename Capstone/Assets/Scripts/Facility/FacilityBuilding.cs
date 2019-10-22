@@ -10,7 +10,7 @@ public class FacilityBuilding : MonoBehaviour
     [SerializeField] GameObject UIPromptEscape;
     public bool onLockdown;
 
-    FacilityLight[] lights;
+    Light[] lights;
 
     PlayerMove playerMove;
 
@@ -18,7 +18,7 @@ public class FacilityBuilding : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lights = FindObjectsOfType<FacilityLight>();
+        lights = FindObjectsOfType<Light>();
         SceneManager.LoadScene("ParaBearContainmentRoom", LoadSceneMode.Additive);
         playerMove = FindObjectOfType<PlayerMove>();
         Instantiate(UIPromptArrival, playerMove.transform.position + playerMove.transform.forward, Quaternion.identity);
@@ -48,9 +48,9 @@ public class FacilityBuilding : MonoBehaviour
     public void SetLockdown(bool lockdown)
     {
         onLockdown = lockdown;
-        foreach (FacilityLight l in lights)
+        foreach (Light l in lights)
         {
-            l.lightFixture.color = (onLockdown) ? Color.red : Color.white;
+            l.color = (onLockdown) ? Color.red : Color.white;
         }
         Debug.Log("Lockdown set to " + onLockdown);
         LockDownSwitch.SetSwitch(onLockdown);
@@ -59,7 +59,6 @@ public class FacilityBuilding : MonoBehaviour
     public void InvertLockdown()
     {
         onLockdown = !onLockdown;
-        Light[] lights = FindObjectsOfType<Light>();
         foreach (Light l in lights)
         {
             l.color = (onLockdown) ? Color.red : Color.white;

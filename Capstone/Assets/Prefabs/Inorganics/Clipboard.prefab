@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4688697005123718153}
   - component: {fileID: 8756902030031554741}
   - component: {fileID: 6735523073138940718}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 6609237605976578152}
   - component: {fileID: 2466154146332393056}
   - component: {fileID: 1584735153520664931}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Clipboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +174,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: b690d153c17501b48af3d6c9d2d0ee45, type: 2}
-  - {fileID: 2100000, guid: 168aab2483ee6dc44ba25cb812280fc3, type: 2}
+  - {fileID: 2100000, guid: 8fa985c9219416144ae9764d6d5aebcd, type: 2}
   - {fileID: 2100000, guid: a00cd4d52c480954183e8dd7a7405d8b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0

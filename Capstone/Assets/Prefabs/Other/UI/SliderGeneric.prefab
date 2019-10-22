@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3858070561779105547}
   - component: {fileID: 8454357454229867704}
   - component: {fileID: 97044370923915570}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: SliderGeneric
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Slider: {fileID: 2655435424846590149}
+  leftRight: 1
   Value: 0.5
 --- !u!65 &3858070561779105547
 BoxCollider:
@@ -114,7 +115,7 @@ GameObject:
   - component: {fileID: 9073648862638140443}
   - component: {fileID: 8504564686436892136}
   - component: {fileID: 1073548203}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: pCube9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,7 +209,7 @@ GameObject:
   - component: {fileID: 1120746886244841845}
   - component: {fileID: 1334531168072988173}
   - component: {fileID: 3803301858284697886}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -288,7 +289,7 @@ GameObject:
   - component: {fileID: 6389629047308124920}
   - component: {fileID: 802978125320588530}
   - component: {fileID: 697749308}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: pCube8
   m_TagString: Untagged
   m_Icon: {fileID: 0}

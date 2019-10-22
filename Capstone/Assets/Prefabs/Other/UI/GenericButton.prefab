@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1089275314}
   - component: {fileID: 1089275317}
   - component: {fileID: 1089275316}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 3889030177870065627}
   - component: {fileID: 3889030177870065626}
   - component: {fileID: 3889030177870065629}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -185,7 +185,7 @@ GameObject:
   - component: {fileID: 3889030179216773767}
   - component: {fileID: 3889030179216773766}
   - component: {fileID: 3889030179216773769}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: buttonCase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -282,7 +282,7 @@ GameObject:
   - component: {fileID: 1446007320888346477}
   - component: {fileID: 884647112}
   - component: {fileID: 2644973551144198646}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: GenericButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}

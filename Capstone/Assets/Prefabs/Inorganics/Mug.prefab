@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1465860087288517250}
   - component: {fileID: 1392563355627305488}
   - component: {fileID: 4694510687091220348}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 548558003900108367}
   - component: {fileID: 7283161543979756731}
   - component: {fileID: 939947320335545996}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Mug
   m_TagString: Untagged
   m_Icon: {fileID: 0}
