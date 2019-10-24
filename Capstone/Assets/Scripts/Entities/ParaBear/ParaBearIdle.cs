@@ -19,9 +19,18 @@ public class ParaBearIdle : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
 
-        if (pbc.AreAnyBabiesInView()) animator.SetTrigger("BabySight");
-        pbc.CheckForHunger(); //if hungry, breakout
-        pbc.CheckForPlayerSight(); // If not, then it follows player
+        if (pbc.AreAnyBabiesInView())
+        {
+            animator.SetTrigger("BabySight");
+        }
+        else if (pbc.CheckForHunger())
+        {
+            animator.SetTrigger("BreakOut"); //if hungry, breakout
+        }
+        else if (pbc.CheckForPlayerSight())
+        {
+            animator.SetTrigger("PlayerSight"); // If not, then it follows player
+        }
 
         waitseconds -= Time.deltaTime;
 

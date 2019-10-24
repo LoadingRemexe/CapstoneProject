@@ -9,10 +9,11 @@ public class ParaBearController : MonoBehaviour
     public EntityBasic entityBasic;
     public PlayerMove playerMove;
     public NavMeshAgent navMeshAgent;
+    public Rigidbody rbody;
 
     public int BabesConsumed = 0;
-    public float Hunger = 0.0f;
-    public float HungerTime = 60;
+    public float Hunger = 120.0f;
+    public float TimeSinceFed = 0.0f;
 
     void Start()
     {
@@ -20,6 +21,7 @@ public class ParaBearController : MonoBehaviour
         entityBasic = GetComponent<EntityBasic>();
         playerMove = FindObjectOfType<PlayerMove>();
         navMeshAgent = GetComponent<NavMeshAgent>();
+        rbody = GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -28,20 +30,25 @@ public class ParaBearController : MonoBehaviour
         {
             g.transform.LookAt(playerMove.transform.position + Vector3.up * 2.0f);
         }
-        Hunger += Time.deltaTime;
-
+        Hunger -= Time.deltaTime;
+        TimeSinceFed += Time.deltaTime;
+        rbody.velocity = Vector3.zero;
         animator.SetFloat("Speed", navMeshAgent.velocity.magnitude);
+        articulateStatistics();
     }
 
-    public void CheckForHunger()
+    public bool CheckForHunger()
     {
-        if (Hunger >= HungerTime)
+        if (Hunger < 0.0f)
         {
-            animator.SetTrigger("BreakOut");
+            Debug.Log("Parabear is Hungry");
+            return true;
         }
+        return false;
+
     }
 
-    public void CheckForPlayerSight()
+    public bool CheckForPlayerSight()
     {
         Vector3 direction = playerMove.transform.position - animator.transform.position;
         Ray ray = new Ray(animator.transform.position + Vector3.up, direction);
@@ -50,11 +57,11 @@ public class ParaBearController : MonoBehaviour
         {
             if (hit.collider.CompareTag("Player"))
             {
-                animator.SetTrigger("PlayerSight");
                 Debug.Log("Sees Player");
-
+                return true;
             }
         }
+        return false;
     }
 
     public bool AreAnyBabiesInView()
@@ -78,7 +85,17 @@ public class ParaBearController : MonoBehaviour
 
     public void ResetHunger()
     {
-        Hunger = 0.0f;
+        Hunger += 60.0f;
+        TimeSinceFed = 0.0f;
+    }
+
+    void articulateStatistics()
+    {
+        string hungery = (CheckForHunger()) ? "Hungry" : "Happy";
+        entityBasic.Statistics = "Entity Scanned: Entity #1" +
+            "\nTime in Containment:" + entityBasic.TimeInContainment.ToString("00.00") + " seconds" +
+            "\nTime since last feeding:" + (TimeSinceFed).ToString("00.00") + " seconds" +
+            "\nEmotional State: " + hungery;
     }
 
     #region depreciated code

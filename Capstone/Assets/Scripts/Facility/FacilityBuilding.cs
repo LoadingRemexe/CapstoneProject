@@ -12,26 +12,36 @@ public class FacilityBuilding : MonoBehaviour
 
     Light[] lights;
 
+
+    float InitialTimer = 10.0f;
+    bool loaded = false;
     PlayerMove playerMove;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        lights = FindObjectsOfType<Light>();
-        SceneManager.LoadScene("ParaBearContainmentRoom", LoadSceneMode.Additive);
         playerMove = FindObjectOfType<PlayerMove>();
-        Instantiate(UIPromptArrival, playerMove.transform.position + playerMove.transform.forward, Quaternion.identity);
+        lights = FindObjectsOfType<Light>();
+        SceneManager.LoadScene("EmptyParaBearContainmentRoom", LoadSceneMode.Additive);
+        SceneManager.LoadScene("RainyDayContainmentRoom", LoadSceneMode.Additive);
 
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (InitialTimer <= 0.0f && !loaded) // load first entity
+        {
+          // SceneManager.UnloadSceneAsync("EmptyParaBearContainmentRoom");
+          //  SceneManager.LoadScene("ParaBearContainmentRoom", LoadSceneMode.Additive);
+          //  Instantiate(UIPromptArrival, playerMove.transform.position + playerMove.transform.forward, Quaternion.identity);
+            loaded = true;
+        } else if (InitialTimer > 0.0f)
+        {
+            InitialTimer -= Time.deltaTime;
+        }
     }
-
-
 
     private void OnTriggerEnter(Collider other)
     {

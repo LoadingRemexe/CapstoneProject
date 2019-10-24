@@ -29,10 +29,12 @@ public class ParaBearBreakOut : StateMachineBehaviour
         if (containmentCountdown <= 0.0f)
         {
             animator.SetTrigger("Escape");
+            containmentCountdown = 60.0f;
         }
-        if (pbc.Hunger < pbc.HungerTime)
+        if (!pbc.CheckForHunger())
         {
             animator.SetTrigger("Idle");
+            containmentCountdown = 60.0f;
         }
     }
 

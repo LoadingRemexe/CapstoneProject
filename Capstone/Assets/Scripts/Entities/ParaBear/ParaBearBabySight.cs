@@ -8,7 +8,7 @@ public class ParaBearBabySight : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Debug.Log("Baby Sight Mode");
+  //      Debug.Log("Baby Sight Mode");
 
         pbc = animator.GetComponent<ParaBearController>();
 
@@ -32,12 +32,12 @@ public class ParaBearBabySight : StateMachineBehaviour
         }
         if (targetBaby)
         {
-            //Debug.Log("Baby Targeted");
+            Debug.Log("Baby Targeted");
             pbc.navMeshAgent.SetDestination(targetBaby.transform.position);
         }
         else
         {
-            //Debug.Log("Baby Target Aborted");
+            Debug.Log("Baby Target Aborted");
             animator.SetTrigger("Idle");
         }
 

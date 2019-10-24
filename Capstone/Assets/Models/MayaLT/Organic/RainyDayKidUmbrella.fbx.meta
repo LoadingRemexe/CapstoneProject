@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 83e778427b651d2418e2c159e43a8610
 ModelImporter:
-  serializedVersion: 27
+  serializedVersion: 28
   internalIDToNameTable: []
   externalObjects:
   - first:
@@ -13,7 +13,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Silver
-    second: {fileID: 2100000, guid: 1c4ad95c5d1a958408b0132e274dab8d, type: 2}
+    second: {fileID: 2100000, guid: b1b8547f346074b4aaabd41d0115fe20, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -25,9 +25,9 @@ ModelImporter:
       name: transparentTeeth
     second: {fileID: 2100000, guid: ae8bc6e86ed9d12468c548dd5f356aa4, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
-    materialSearch: 1
+    materialSearch: 2
     materialLocation: 0
   animations:
     legacyGenerateAnimations: 4

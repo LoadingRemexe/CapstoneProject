@@ -15,8 +15,14 @@ public class ParaBearPlayerSight : StateMachineBehaviour
     {
         Debug.Log("PlayerSight Mode");
 
-        if (pbc.AreAnyBabiesInView()) animator.SetTrigger("BabySight");
-        pbc.CheckForHunger(); //if hungry, breakout
+        if (pbc.AreAnyBabiesInView())
+        {
+            animator.SetTrigger("BabySight");
+        }
+        else if (pbc.CheckForHunger())
+        {
+            animator.SetTrigger("BreakOut"); //if hungry, breakout
+        }
 
 
         Vector3 direction = pbc.playerMove.transform.position - animator.transform.position;

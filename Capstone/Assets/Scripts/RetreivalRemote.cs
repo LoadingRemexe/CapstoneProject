@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HandHeldDevice : MonoBehaviour
+public class RetreivalRemote : MonoBehaviour
 {
     [SerializeField] Transform pointer;
     [SerializeField] AudioSource ActivatedSFX;
@@ -15,7 +15,6 @@ public class HandHeldDevice : MonoBehaviour
     GameObject entityRetreiving = null;
     public bool ViewLine = true;
 
-    float laserWidth = 0.1f;
     float laserMaxLength = 5f;
     Vector3 endPosition = Vector3.zero;
 
@@ -28,7 +27,6 @@ public class HandHeldDevice : MonoBehaviour
 
         Vector3[] initLaserPositions = new Vector3[2] { Vector3.zero, Vector3.zero };
         laserLineRenderer.SetPositions(initLaserPositions);
-        laserLineRenderer.widthMultiplier = laserWidth;
     }
 
     // Update is called once per frame
@@ -50,11 +48,17 @@ public class HandHeldDevice : MonoBehaviour
             entityRetreiving.transform.position = Vector3.Lerp(pointer.position + pointer.forward, entityRetreiving.transform.position, Time.deltaTime);
         } else if (!c.isHeld && entityRetreiving)
         {
-            entityRetreiving.GetComponentInParent<Animator>().SetBool("Retreive", false);
-            Debug.Log("DeActivate Retreive");
-            entityRetreiving = null;
-            if (ActivatedSFX) ActivatedSFX.Stop();
+            DeActivateRetreive();
         }
+    }
+
+    void DeActivateRetreive()
+    {
+        entityRetreiving.GetComponentInParent<Animator>().SetBool("Retreive", false);
+
+        Debug.Log("DeActivate Retreive");
+        entityRetreiving = null;
+        if (ActivatedSFX) ActivatedSFX.Stop();
     }
 
     public void ActivateRetreive()
@@ -75,8 +79,11 @@ public class HandHeldDevice : MonoBehaviour
                     if (a)
                     {
                         a.SetBool("Retreive", true);
+                        entityRetreiving.GetComponentInParent<Animator>().ResetTrigger("Escape");
+
                         entityRetreiving = raycastHit.collider.gameObject;
                         Debug.Log("Retreival Successful");
+
                         if (ActivatedSFX) ActivatedSFX.Play();
 
                     }
@@ -84,11 +91,7 @@ public class HandHeldDevice : MonoBehaviour
             }
         } else
         {
-            entityRetreiving.GetComponentInParent<Animator>().SetBool("Retreive", false);
-            Debug.Log("DeActivate Retreive");
-            entityRetreiving = null;
-            if (ActivatedSFX) ActivatedSFX.Stop();
-
+            DeActivateRetreive();
         }
     }
     void DrawLaser(Vector3 targetPosition, Vector3 direction, float length)

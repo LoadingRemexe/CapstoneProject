@@ -8,6 +8,7 @@ public class EntityBasic : MonoBehaviour
     [SerializeField] public string ContainmentScene;
     [SerializeField] public string EmptyScene;
     public float TimeInContainment = 0.0f;
+    public string Statistics = "";
 
     private void Update()
     {

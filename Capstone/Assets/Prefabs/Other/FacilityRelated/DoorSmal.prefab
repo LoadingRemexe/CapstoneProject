@@ -270,6 +270,11 @@ PrefabInstance:
       propertyPath: InteractActivate.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 220441689246529093}
+    - target: {fileID: 3889030179271238781, guid: e3941185eadf6cc4298c75ba6d38b8f9,
+        type: 3}
+      propertyPath: InteractActivate.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: InvertOpen
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3941185eadf6cc4298c75ba6d38b8f9, type: 3}
 --- !u!4 &8326313576589733049 stripped
@@ -1258,6 +1263,11 @@ PrefabInstance:
       propertyPath: InteractActivate.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 220441689246529093}
+    - target: {fileID: 3889030179271238781, guid: e3941185eadf6cc4298c75ba6d38b8f9,
+        type: 3}
+      propertyPath: InteractActivate.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: InvertOpen
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3941185eadf6cc4298c75ba6d38b8f9, type: 3}
 --- !u!4 &6775533709257270427 stripped
