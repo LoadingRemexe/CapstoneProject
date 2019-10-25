@@ -8,6 +8,8 @@ public class FacilityBuilding : MonoBehaviour
     [SerializeField] public Switch_Toggle LockDownSwitch;
     [SerializeField] GameObject UIPromptArrival;
     [SerializeField] GameObject UIPromptEscape;
+    [SerializeField] bool LoadParabear = false;
+    [SerializeField] bool LoadRainyDay = false;
     public bool onLockdown;
 
     Light[] lights;
@@ -23,24 +25,37 @@ public class FacilityBuilding : MonoBehaviour
     {
         playerMove = FindObjectOfType<PlayerMove>();
         lights = FindObjectsOfType<Light>();
-        SceneManager.LoadScene("EmptyParaBearContainmentRoom", LoadSceneMode.Additive);
-        SceneManager.LoadScene("RainyDayContainmentRoom", LoadSceneMode.Additive);
+        if (LoadParabear)
+        {
+             SceneManager.LoadScene("ParaBearContainmentRoom", LoadSceneMode.Additive);
+        }
+        else
+        {
+            SceneManager.LoadScene("EmptyParaBearContainmentRoom", LoadSceneMode.Additive);
+        }
+        if (LoadRainyDay)
+        {
+            SceneManager.LoadScene("RainyDayContainmentRoom", LoadSceneMode.Additive);
+        }
+        else
+        {
+            SceneManager.LoadScene("EmptyRainyDayContainmentRoom", LoadSceneMode.Additive);
+        }
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (InitialTimer <= 0.0f && !loaded) // load first entity
-        {
-          // SceneManager.UnloadSceneAsync("EmptyParaBearContainmentRoom");
-          //  SceneManager.LoadScene("ParaBearContainmentRoom", LoadSceneMode.Additive);
-          //  Instantiate(UIPromptArrival, playerMove.transform.position + playerMove.transform.forward, Quaternion.identity);
-            loaded = true;
-        } else if (InitialTimer > 0.0f)
-        {
-            InitialTimer -= Time.deltaTime;
-        }
+        //if (InitialTimer <= 0.0f && !loaded) // load first entity
+        //{
+        //  // SceneManager.UnloadSceneAsync("EmptyParaBearContainmentRoom");
+        //  //  Instantiate(UIPromptArrival, playerMove.transform.position + playerMove.transform.forward, Quaternion.identity);
+        //    loaded = true;
+        //} else if (InitialTimer > 0.0f)
+        //{
+        //    InitialTimer -= Time.deltaTime;
+        //}
     }
 
     private void OnTriggerEnter(Collider other)

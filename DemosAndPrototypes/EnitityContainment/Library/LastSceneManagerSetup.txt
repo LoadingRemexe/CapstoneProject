@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/TestScenes/RowanTestScene.unity
+- path: Assets/Scenes/EntityContainment.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

@@ -138,7 +138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!136 &98235910
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -167,7 +167,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -320,7 +319,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &365998912
 Transform:
   m_ObjectHideFlags: 0
@@ -671,7 +670,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!136 &842682866
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -700,7 +699,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -957,7 +955,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1326522461
 Transform:
   m_ObjectHideFlags: 0
@@ -1041,7 +1039,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1185,6 +1182,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ParaBear
+      objectReference: {fileID: 0}
+    - target: {fileID: 8572074395242890368, guid: 3c832375375e6eb4bb9654f133745707,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4660515218336151187, guid: 3c832375375e6eb4bb9654f133745707,
         type: 3}
@@ -2475,6 +2477,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 365998912}
     m_Modifications:
+    - target: {fileID: 8514922016725995390, guid: c48fff3f201eb6e40994abbce2acaf71,
+        type: 3}
+      propertyPath: m_Name
+      value: DialGeneric
+      objectReference: {fileID: 0}
     - target: {fileID: 4643296622293155181, guid: c48fff3f201eb6e40994abbce2acaf71,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2529,11 +2536,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8514922016725995390, guid: c48fff3f201eb6e40994abbce2acaf71,
-        type: 3}
-      propertyPath: m_Name
-      value: DialGeneric
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c48fff3f201eb6e40994abbce2acaf71, type: 3}
@@ -2623,6 +2625,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RainyDay
+      objectReference: {fileID: 0}
+    - target: {fileID: 5619088356503512295, guid: 14c18923947366f47a6bda6458bf126c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5619088356503512288, guid: 14c18923947366f47a6bda6458bf126c,
         type: 3}
