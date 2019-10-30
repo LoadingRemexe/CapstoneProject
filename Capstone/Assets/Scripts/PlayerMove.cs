@@ -5,6 +5,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] public Camera playerCamera = null;
     [SerializeField] Transform PlayerHand;
     [SerializeField] LayerMask sightLayerMask;
+    [SerializeField] Animator animator;
 
 
     float limitY = 60.0f;
@@ -65,8 +66,6 @@ public class PlayerMove : MonoBehaviour
             }
         }
 
-
-
         if (Input.GetAxis("Mouse ScrollWheel") > 0 && heldObject)
         {
             PlayerHand.transform.Rotate(Vector3.up, 15f);
@@ -75,6 +74,9 @@ public class PlayerMove : MonoBehaviour
         {
             PlayerHand.transform.Rotate(Vector3.up, -15f);
         }
+
+        animator.SetBool("HoldItem", heldObject != null);
+
     }
 
     public void ToggleInteract()
@@ -122,11 +124,14 @@ public class PlayerMove : MonoBehaviour
     {
         rb.velocity = Vector3.zero;
         rb.MovePosition(rb.transform.position += (rb.transform.forward * Input.GetAxis("Vertical") + rb.transform.right * Input.GetAxis("Horizontal")) * speed * Time.deltaTime);
+        //if (Mathf.Abs(Input.GetAxis("Vertical")) > 0.1f || Mathf.Abs(Input.GetAxis("Horizontal")) > 0.1f) footsteps.UnPause(); else footsteps.Pause();
 
         lookVertical += Input.GetAxisRaw("Mouse Y") * cameraSmooth * Time.deltaTime;
         lookVertical = Mathf.Clamp(lookVertical, -limitY, limitY);
         playerCamera.transform.localRotation = Quaternion.AngleAxis(-lookVertical, Vector3.right);
 
         rb.transform.Rotate(Vector3.up, Input.GetAxis("Mouse X") * cameraSmooth * Time.deltaTime);
+        animator.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Vertical")) + Mathf.Abs(Input.GetAxis("Horizontal")));
+        
     }
 }

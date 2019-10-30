@@ -21,7 +21,7 @@ public class SecurityCamera : MonoBehaviour
 
     void Update()
     {
-        screen.SetActive(camIsAwake && camIsFixed);
+        screen.SetActive(camIsFixed);
         securityCam.SetActive(camIsAwake && camIsFixed);
 
         if (camIsFixed)

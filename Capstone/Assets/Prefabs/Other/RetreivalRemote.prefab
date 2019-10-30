@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: -1296386721088312132}
   - component: {fileID: 1941115069922306438}
   m_Layer: 14
-  m_Name: HandheldDevice
+  m_Name: RetreivalRemote
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -112,7 +112,7 @@ MonoBehaviour:
   laserLineRenderer: {fileID: 4016079835843820516}
   entityLayer:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 1025
   ViewLine: 1
 --- !u!114 &4016079835843820523
 MonoBehaviour:

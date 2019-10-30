@@ -2548,6 +2548,11 @@ PrefabInstance:
       propertyPath: containedEntity
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 9117963333308117880, guid: eef1b8951bd84e14cb0a20355c77f7b1,
+        type: 3}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 8400000, guid: 3a1f6b8bcacc38f4b9f3a3b6786a1c38, type: 2}
     - target: {fileID: 1664271118037675228, guid: eef1b8951bd84e14cb0a20355c77f7b1,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -2563,6 +2568,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 57
       objectReference: {fileID: 0}
+    - target: {fileID: 9085548007126582480, guid: eef1b8951bd84e14cb0a20355c77f7b1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5d52fa2ca36af704391212cc74e49c15, type: 2}
     - target: {fileID: 5503127127891907635, guid: eef1b8951bd84e14cb0a20355c77f7b1,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

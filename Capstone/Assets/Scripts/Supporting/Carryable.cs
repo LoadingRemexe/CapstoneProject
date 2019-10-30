@@ -33,7 +33,9 @@ public class Carryable : MonoBehaviour
     {
         FindObjectOfType<PlayerMove>().PickUpObject(this);
         transform.localPosition = Vector3.zero;
-        transform.localRotation = Quaternion.identity;
+        transform.localRotation = Quaternion.identity; 
+        transform.localScale = Vector3.one;
+
         isHeld = true;
         if (rb) rb.useGravity = false;
         body.enabled = false;
@@ -43,6 +45,7 @@ public class Carryable : MonoBehaviour
     {
         isHeld = false;
         transform.parent = OriginalParent;
+        transform.localScale = Vector3.one;
         if (rb) rb.useGravity = true;
         body.enabled = true;
     }

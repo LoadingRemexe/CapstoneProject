@@ -11,7 +11,6 @@ public class RetreivalRemote : MonoBehaviour
     Carryable c;
     PlayerMove p;
 
-
     GameObject entityRetreiving = null;
     public bool ViewLine = true;
 
@@ -69,19 +68,20 @@ public class RetreivalRemote : MonoBehaviour
             Ray ray = new Ray(pointer.position, pointer.forward);
             RaycastHit raycastHit;
 
-            if (Physics.Raycast(ray, out raycastHit, laserMaxLength))
+            if (Physics.Raycast(ray, out raycastHit, laserMaxLength, entityLayer))
             {
-                if (raycastHit.collider.gameObject.CompareTag("Entity"))
+                EntityBasic eb = raycastHit.collider.GetComponent<EntityBasic>();
+                if (eb)
                 {
                     Debug.Log("Hit Entity");
 
-                    Animator a = raycastHit.collider.GetComponentInParent<Animator>();
+                    Animator a = eb.GetComponent<Animator>();
                     if (a)
                     {
                         a.SetBool("Retreive", true);
-                        entityRetreiving.GetComponentInParent<Animator>().ResetTrigger("Escape");
+                        a.ResetTrigger("Escape");
 
-                        entityRetreiving = raycastHit.collider.gameObject;
+                        entityRetreiving = eb.gameObject;
                         Debug.Log("Retreival Successful");
 
                         if (ActivatedSFX) ActivatedSFX.Play();

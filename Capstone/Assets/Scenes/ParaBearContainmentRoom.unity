@@ -3280,7 +3280,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 8400000, guid: 49dd0f8c271a60d4fac9c21ee8f52af1, type: 2}
+      objectReference: {fileID: 8400000, guid: 9493236889dd0ee42a05b9f85467b92e, type: 2}
     - target: {fileID: 1664271118037675228, guid: eef1b8951bd84e14cb0a20355c77f7b1,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -3296,11 +3296,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 50
       objectReference: {fileID: 0}
-    - target: {fileID: 5503127127891907635, guid: eef1b8951bd84e14cb0a20355c77f7b1,
+    - target: {fileID: 9085548007126582480, guid: eef1b8951bd84e14cb0a20355c77f7b1,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 18fa79ef90971264195547ef55dfd45d, type: 2}
+    - target: {fileID: 5503127127891907635, guid: eef1b8951bd84e14cb0a20355c77f7b1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 79dae22a73b9d0e41bcc6b918883151e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eef1b8951bd84e14cb0a20355c77f7b1, type: 3}
 --- !u!43 &1898607022

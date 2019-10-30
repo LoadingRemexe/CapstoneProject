@@ -43,7 +43,7 @@ public class OptionsManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        audioMixer.SetFloat("SFX_Volume", (dial_Control.Value * 99.9f) + 0.1f);
+        audioMixer.SetFloat("SFX_Volume", (dial_Control.Value * 20.0f) -.01f);
         audioReadout.text = dial_Control.Value.ToString("0.00");
 
         pm.speed = slider_Control1.Value * speedmax;

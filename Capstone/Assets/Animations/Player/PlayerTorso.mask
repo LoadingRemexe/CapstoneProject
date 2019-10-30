@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PlayerTorso
+  m_Mask: 00000000010000000100000000000000000000000100000001000000010000000100000000000000000000000000000000000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: back1
+    m_Weight: 1
+  - m_Path: Hips
+    m_Weight: 1
+  - m_Path: Hips/LHip
+    m_Weight: 0
+  - m_Path: Hips/LHip/LKnee
+    m_Weight: 1
+  - m_Path: Hips/LHip/LKnee/LHeel
+    m_Weight: 1
+  - m_Path: Hips/LHip/LKnee/LHeel/LToe
+    m_Weight: 1
+  - m_Path: Hips/RHip
+    m_Weight: 0
+  - m_Path: Hips/RHip/RKnee
+    m_Weight: 1
+  - m_Path: Hips/RHip/RKnee/RHeel
+    m_Weight: 1
+  - m_Path: Hips/RHip/RKnee/RHeel/RToe
+    m_Weight: 1
+  - m_Path: Hips/SpineLower
+    m_Weight: 1
+  - m_Path: Hips/SpineLower/SpineMiddle
+    m_Weight: 1
+  - m_Path: Hips/SpineLower/SpineMiddle/SpinerUpper
+    m_Weight: 1
+  - m_Path: Hips/SpineLower/SpineMiddle/SpinerUpper/LSHoulder
+    m_Weight: 1
+  - m_Path: Hips/SpineLower/SpineMiddle/SpinerUpper/LSHoulder/LElbow
+    m_Weight: 1
+  - m_Path: Hips/SpineLower/SpineMiddle/SpinerUpper/LSHoulder/LElbow/LWrist
+    m_Weight: 1
+  - m_Path: Hips/SpineLower/SpineMiddle/SpinerUpper/LSHoulder/LElbow/LWrist/LPalm
+    m_Weight: 1
+  - m_Path: Hips/SpineLower/SpineMiddle/SpinerUpper/LSHoulder/LElbow/LWrist/LPalm/LKnuckle
+    m_Weight: 1
+  - m_Path: Hips/SpineLower/SpineMiddle/SpinerUpper/LSHoulder/LElbow/LWrist/LPalm/LKnuckle/FingerTip
+    m_Weight: 1
+  - m_Path: Hips/SpineLower/SpineMiddle/SpinerUpper/LSHoulder/LElbow/LWrist/LPalm/LThumb
+    m_Weight: 1
+  - m_Path: Hips/SpineLower/SpineMiddle/SpinerUpper/LSHoulder/LElbow/LWrist/LPalm/LThumb/LThumb1
+    m_Weight: 1
+  - m_Path: Hips/SpineLower/SpineMiddle/SpinerUpper/Neck
+    m_Weight: 1
+  - m_Path: Hips/SpineLower/SpineMiddle/SpinerUpper/Neck/Head
+    m_Weight: 1
+  - m_Path: Hips/SpineLower/SpineMiddle/SpinerUpper/Neck/Head/Chin
+    m_Weight: 1
+  - m_Path: Hips/SpineLower/SpineMiddle/SpinerUpper/RShoulder
+    m_Weight: 1
+  - m_Path: Hips/SpineLower/SpineMiddle/SpinerUpper/RShoulder/RElbow
+    m_Weight: 1
+  - m_Path: Hips/SpineLower/SpineMiddle/SpinerUpper/RShoulder/RElbow/RWrist
+    m_Weight: 1
+  - m_Path: Hips/SpineLower/SpineMiddle/SpinerUpper/RShoulder/RElbow/RWrist/RPalm
+    m_Weight: 1
+  - m_Path: Hips/SpineLower/SpineMiddle/SpinerUpper/RShoulder/RElbow/RWrist/RPalm/RKnuckle
+    m_Weight: 1
+  - m_Path: Hips/SpineLower/SpineMiddle/SpinerUpper/RShoulder/RElbow/RWrist/RPalm/RKnuckle/RFIngerTip
+    m_Weight: 1
+  - m_Path: Hips/SpineLower/SpineMiddle/SpinerUpper/RShoulder/RElbow/RWrist/RPalm/RThumb
+    m_Weight: 1
+  - m_Path: Hips/SpineLower/SpineMiddle/SpinerUpper/RShoulder/RElbow/RWrist/RPalm/RThumb/RThumb1
+    m_Weight: 1
+  - m_Path: left1
+    m_Weight: 1
+  - m_Path: right1
+    m_Weight: 1
+  - m_Path: Scientist
+    m_Weight: 1
