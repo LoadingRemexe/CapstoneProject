@@ -341,7 +341,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2142825864972349017}
-        m_MethodName: ButtonClicked
+        m_MethodName: InvertSwitch
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

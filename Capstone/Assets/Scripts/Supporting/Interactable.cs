@@ -6,13 +6,15 @@ using UnityEngine.Events;
 
 public class Interactable : MonoBehaviour
 {
-    [SerializeField] UnityEvent InteractActivate = null;
+    [SerializeField] public UnityEvent InteractActivate = null;
 
     public void Interact()
     {
         if (InteractActivate != null)
         {
             InteractActivate.Invoke();
+            Debug.Log("Invoked with " + InteractActivate.GetPersistentMethodName(0));
+
         }
     }
 }

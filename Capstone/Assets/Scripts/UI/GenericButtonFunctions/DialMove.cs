@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TMPro;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DialMove : MonoBehaviour
 {
@@ -23,7 +20,7 @@ public class DialMove : MonoBehaviour
         {
             active = false;
         }
-        Value = ( (Dial.rotation.y / 3.6f)* 2 + 0.5f);
+        Value = ((Dial.rotation.y / 3.6f) * 2 + 0.5f);
 
         Value = Mathf.Clamp01(Value);
     }

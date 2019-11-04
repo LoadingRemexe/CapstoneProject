@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DoorBehavior : MonoBehaviour
 {
@@ -8,16 +6,22 @@ public class DoorBehavior : MonoBehaviour
     public bool isUnlocked = true;
     public bool isOpen = false;
     Animator animator;
+    
 
     void Start()
     {
         animator = GetComponent<Animator>();
-        if(animator) animator.SetBool("isOpen", isOpen);
-
+        animator.SetBool("isOpen", isOpen);
+       Interactable[] i =  GetComponentsInChildren<Interactable>();
+        foreach (Interactable item in i)
+        {
+            item.InteractActivate.AddListener(InvertOpen);
+        }
     }
 
     void Update()
     {
+        animator.SetBool("isOpen", isOpen);
 
     }
     public void InvertLock()
@@ -30,9 +34,7 @@ public class DoorBehavior : MonoBehaviour
         if (isUnlocked)
         {
             if (DoorSFX) DoorSFX.Play();
-
             isOpen = !isOpen;
-            if (animator) animator.SetBool("isOpen", isOpen);
         }
     }
 
@@ -41,17 +43,13 @@ public class DoorBehavior : MonoBehaviour
         if (isUnlocked)
         {
             if (DoorSFX) DoorSFX.Play();
-
             isOpen = true;
-            if (animator) animator.SetBool("isOpen", isOpen);
         }
     }
     public void CloseDoor()
     {
         if (DoorSFX) DoorSFX.Play();
-
         isOpen = false;
-        if (animator) animator.SetBool("isOpen", isOpen);
     }
 
     public void LockDoor()

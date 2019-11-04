@@ -20,4 +20,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EmptyRainyDayContainmentRoom.unity
     guid: 292eab06108c3c249ba68553ae09313e
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 4b906940bc0ffc747a430213da1c3c5c,
+      type: 2}

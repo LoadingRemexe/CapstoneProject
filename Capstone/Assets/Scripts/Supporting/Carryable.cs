@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Events;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 public class Carryable : MonoBehaviour
@@ -19,7 +16,7 @@ public class Carryable : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         body = GetComponent<MeshCollider>();
-        OriginalParent = transform.parent;            
+        OriginalParent = transform.parent;
     }
     private void Update()
     {
@@ -33,7 +30,7 @@ public class Carryable : MonoBehaviour
     {
         FindObjectOfType<PlayerMove>().PickUpObject(this);
         transform.localPosition = Vector3.zero;
-        transform.localRotation = Quaternion.identity; 
+        transform.localRotation = Quaternion.identity;
         transform.localScale = Vector3.one;
 
         isHeld = true;

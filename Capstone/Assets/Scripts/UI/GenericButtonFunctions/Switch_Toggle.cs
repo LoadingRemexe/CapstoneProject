@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Switch_Toggle : MonoBehaviour
 {
@@ -17,21 +15,20 @@ public class Switch_Toggle : MonoBehaviour
         }
     }
 
-    public void ButtonClicked()
-    {
-        isOn = !isOn;
-        if (click)
-        {
-            click.SetBool(animationName, isOn);
-        }
-    }
-
     public void SetSwitch(bool onOff)
     {
         isOn = onOff;
         if (click)
         {
             click.SetBool(animationName, onOff);
+        }
+    }
+    public void InvertSwitch()
+    {
+        isOn = !isOn;
+        if (click)
+        {
+            click.SetBool(animationName, isOn);
         }
     }
 }

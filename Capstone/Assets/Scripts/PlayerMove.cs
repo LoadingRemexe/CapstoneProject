@@ -1,23 +1,27 @@
 ﻿using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class PlayerMove : MonoBehaviour
+public class PlayerMove : MonoBehaviour, PlayerControls.IPlayerActions
 {
     [SerializeField] public Camera playerCamera = null;
     [SerializeField] Transform PlayerHand;
     [SerializeField] LayerMask sightLayerMask;
     [SerializeField] Animator animator;
+    [SerializeField] PlayerControls controls;
 
 
     float limitY = 60.0f;
-    public float cameraSmooth = 30.0f;
-    public float speed = 10.0f;
-    public float SightDistance = 5.0f;
+    public float cameraSmooth { get; set; } = 30f;
+    public float speed { get; set; } = 5f;
+    public float SightDistance { get; set; } = 3.0f;
 
     float lookVertical = 0.0f;
-    public Carryable heldObject = null;
+    Vector2 Looking = Vector2.zero;
+    Vector2 Movement = Vector2.zero;
+    public Carryable heldObject { get; set; } = null;
 
     Rigidbody rb;
-    public GameObject objectInSight = null;
+    public GameObject objectInSight= null;
 
     void Start()
     {
@@ -25,13 +29,74 @@ public class PlayerMove : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
+    #region Input Controls
+    void Awake()
+    {
+        controls = new PlayerControls();
+        controls.Player.SetCallbacks(this);
+    }
+    void OnEnable()
+    {
+        controls.Player.Enable();
+    }
+    void OnDisable()
+    {
+        controls.Player.Disable();
+    }
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        // Debug.Log("Move" + context.ReadValue<Vector2>());
+
+        Movement = context.ReadValue<Vector2>();
+    }
+
+    public void OnLook(InputAction.CallbackContext context)
+    {
+        // Debug.Log("look" + context.ReadValue<Vector2>());
+        Looking = context.ReadValue<Vector2>();
+    }
+
+    public void OnInteract(InputAction.CallbackContext context)
+    {
+        ToggleInteract();
+    }
+
+    public void OnUse(InputAction.CallbackContext context)
+    {
+        if (heldObject && heldObject.UsableObjectFunction != null)
+        {
+            heldObject.UsableObjectFunction.Invoke();
+        }
+    }
+    public void OnPickUp(InputAction.CallbackContext context)
+    {
+        DropObject();
+        TogglePickup();
+    }
+    public void OnScroll(InputAction.CallbackContext context)
+    {
+        float rotate = 0;
+        if (context.ReadValue<float>() > 0)
+        {
+            rotate = 30.0f;
+        }
+        else if (context.ReadValue<float>() < 0)
+        {
+            rotate = -30.0f;
+        }
+        PlayerHand.transform.Rotate(Vector3.up, rotate * Time.deltaTime);
+    }
+
+    public void OnPause(InputAction.CallbackContext context)
+    {
+        Cursor.lockState = (Time.timeScale == 1)? CursorLockMode.None : CursorLockMode.Locked;
+        Time.timeScale = (Time.timeScale == 1) ? 0 : 1;
+    }
+
+    #endregion
+
     void Update()
     {
-        if (Input.GetKeyDown("escape"))
-        {
-            Cursor.lockState = CursorLockMode.None;
-        }
-
         Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
         RaycastHit hit;
 
@@ -43,36 +108,10 @@ public class PlayerMove : MonoBehaviour
             {
                 h.OnHover.SetActive(true);
             }
-        } else
+        }
+        else
         {
             objectInSight = null;
-
-        }
-
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            ToggleInteract();
-        }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            DropObject();
-            TogglePickup();
-        }
-        if (Input.GetKeyDown(KeyCode.Mouse1))
-        {
-            if (heldObject && heldObject.UsableObjectFunction != null)
-            {
-                heldObject.UsableObjectFunction.Invoke();
-            }
-        }
-
-        if (Input.GetAxis("Mouse ScrollWheel") > 0 && heldObject)
-        {
-            PlayerHand.transform.Rotate(Vector3.up, 15f);
-        }
-        if (Input.GetAxis("Mouse ScrollWheel") < 0 && heldObject)
-        {
-            PlayerHand.transform.Rotate(Vector3.up, -15f);
         }
 
         animator.SetBool("HoldItem", heldObject != null);
@@ -87,7 +126,6 @@ public class PlayerMove : MonoBehaviour
             if (interactable != null)
             {
                 interactable.Interact();
-                //Debug.Log("Intracted with " + interactable.name);
             }
         }
     }
@@ -122,16 +160,17 @@ public class PlayerMove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = Vector3.zero;
-        rb.MovePosition(rb.transform.position += (rb.transform.forward * Input.GetAxis("Vertical") + rb.transform.right * Input.GetAxis("Horizontal")) * speed * Time.deltaTime);
-        //if (Mathf.Abs(Input.GetAxis("Vertical")) > 0.1f || Mathf.Abs(Input.GetAxis("Horizontal")) > 0.1f) footsteps.UnPause(); else footsteps.Pause();
-
-        lookVertical += Input.GetAxisRaw("Mouse Y") * cameraSmooth * Time.deltaTime;
+        lookVertical += Looking.y * cameraSmooth * Time.deltaTime;
         lookVertical = Mathf.Clamp(lookVertical, -limitY, limitY);
         playerCamera.transform.localRotation = Quaternion.AngleAxis(-lookVertical, Vector3.right);
 
-        rb.transform.Rotate(Vector3.up, Input.GetAxis("Mouse X") * cameraSmooth * Time.deltaTime);
-        animator.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Vertical")) + Mathf.Abs(Input.GetAxis("Horizontal")));
-        
+        rb.transform.Rotate(Vector3.up, Looking.x * cameraSmooth * Time.deltaTime);
+
+        rb.velocity = Vector3.zero;
+        rb.MovePosition(rb.transform.position += ((rb.transform.forward * Movement.y + rb.transform.right * Movement.x) * speed * Time.deltaTime));
+        animator.SetFloat("Speed", Movement.y + Movement.x);
+
+
     }
+
 }

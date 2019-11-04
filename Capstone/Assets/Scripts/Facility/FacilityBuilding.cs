@@ -1,5 +1,4 @@
-﻿using TMPro;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class FacilityBuilding : MonoBehaviour
@@ -23,6 +22,8 @@ public class FacilityBuilding : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        LockDownSwitch.SetSwitch(onLockdown);
+
         RedAlert.Play();
         RedAlert.Pause();
         playerMove = FindObjectOfType<PlayerMove>();
@@ -54,21 +55,12 @@ public class FacilityBuilding : MonoBehaviour
         }
         LoadInPrompts += "Observation Room 5: \nVacant \n";
         playerPrompts.UpdateText1(LoadInPrompts);
-        
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //if (InitialTimer <= 0.0f && !loaded) // load first entity
-        //{
-        //  // SceneManager.UnloadSceneAsync("EmptyParaBearContainmentRoom");
-        //  //  Instantiate(UIPromptArrival, playerMove.transform.position + playerMove.transform.forward, Quaternion.identity);
-        //    loaded = true;
-        //} else if (InitialTimer > 0.0f)
-        //{
-        //    InitialTimer -= Time.deltaTime;
-        //}
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -90,7 +82,6 @@ public class FacilityBuilding : MonoBehaviour
             l.color = (onLockdown) ? Color.red : Color.white;
         }
         if (onLockdown) playerPrompts.CriticalAlert("LockDown Activated");
-        LockDownSwitch.SetSwitch(onLockdown);
         if (onLockdown) RedAlert.UnPause(); else RedAlert.Pause();
     }
 
