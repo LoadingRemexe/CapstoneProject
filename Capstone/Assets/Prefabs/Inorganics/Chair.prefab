@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 985385392609106221}
   - component: {fileID: 8696733958475673825}
   - component: {fileID: 5168654575702582373}
-  - component: {fileID: 4477433445370127587}
   - component: {fileID: 6291229993102318361}
+  - component: {fileID: 7707652867082556290}
+  - component: {fileID: 8204669195646753565}
   m_Layer: 0
   m_Name: Chair
   m_TagString: Untagged
@@ -56,6 +57,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -81,20 +83,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &4477433445370127587
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5672181140593290118}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -6264831526926562434, guid: fe0a1eb6b4acd0a4e81429540a84357f, type: 3}
 --- !u!54 &6291229993102318361
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -111,3 +99,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!65 &7707652867082556290
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5672181140593290118}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.14068913, y: 0.67084736, z: 0.13365233}
+  m_Center: {x: 0.0039457083, y: 0.34098086, z: 0.0032824874}
+--- !u!65 &8204669195646753565
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5672181140593290118}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.47499657, y: 0.08146715, z: 0.4973215}
+  m_Center: {x: -0.0025498867, y: 0.635671, z: 0.004223287}

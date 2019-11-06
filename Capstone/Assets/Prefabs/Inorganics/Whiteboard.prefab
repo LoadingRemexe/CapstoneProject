@@ -424,8 +424,8 @@ GameObject:
   - component: {fileID: 5699342915031868241}
   - component: {fileID: 884299315495796156}
   - component: {fileID: 3071736225766616100}
-  - component: {fileID: 4412572331190619758}
   - component: {fileID: 5644380797403277142}
+  - component: {fileID: 8535525840703683840}
   m_Layer: 0
   m_Name: Whiteboard
   m_TagString: Untagged
@@ -496,20 +496,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &4412572331190619758
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4876470438348681023}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3049204749757753384, guid: fe0a1eb6b4acd0a4e81429540a84357f, type: 3}
 --- !u!54 &5644380797403277142
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -526,6 +512,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &8535525840703683840
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4876470438348681023}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.14832029, y: 2.552889, z: 2.0673337}
+  m_Center: {x: 0.0085494965, y: 1.2745866, z: 0}
 --- !u!1 &5359959894717225762
 GameObject:
   m_ObjectHideFlags: 0

@@ -173,7 +173,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 168aab2483ee6dc44ba25cb812280fc3, type: 2}
+  - {fileID: 2100000, guid: c9c6e23d85f57894aba0508ffce2fbec, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -237,7 +237,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: ee9ee7e182743c04abe2d4009463c9de, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -246,7 +246,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 0.1
-  MaxDistance: 5
+  MaxDistance: 3
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0

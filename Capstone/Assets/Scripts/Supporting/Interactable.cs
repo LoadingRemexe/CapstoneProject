@@ -13,7 +13,7 @@ public class Interactable : MonoBehaviour
         if (InteractActivate != null)
         {
             InteractActivate.Invoke();
-            Debug.Log("Invoked with " + InteractActivate.GetPersistentMethodName(0));
+            //Debug.Log("Invoked with " + InteractActivate.GetPersistentMethodName(0));
 
         }
     }

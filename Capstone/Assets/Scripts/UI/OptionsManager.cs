@@ -1,6 +1,7 @@
 ﻿using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class OptionsManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class OptionsManager : MonoBehaviour
     [SerializeField] SliderMove slider_Control1;
     [SerializeField] SliderMove slider_Control2;
 
+    [SerializeField] GameObject pauseScreen;
     [SerializeField] TextMeshProUGUI audioReadout;
     [SerializeField] TextMeshProUGUI speedReadout;
     [SerializeField] TextMeshProUGUI cameraReadout;
@@ -15,7 +17,7 @@ public class OptionsManager : MonoBehaviour
     PlayerMove pm;
     float sensitivitymax = 40.0f;
     bool ControllerInput = false;
-    float speedmax = 5.0f;
+    float speedmax = 8.0f;
     float SFXVolume;
 
 
@@ -44,7 +46,7 @@ public class OptionsManager : MonoBehaviour
         {
             SwapController();
         }
-        pm.cameraSmooth = (ControllerInput) ? slider_Control2.Value * sensitivitymax : slider_Control2.Value * (12 / sensitivitymax);
+        pm.cameraSmooth = (ControllerInput) ? slider_Control2.Value * sensitivitymax : slider_Control2.Value * ( sensitivitymax * 0.5f);
         cameraReadout.text = pm.cameraSmooth.ToString("0.00");
 
     }
@@ -61,7 +63,18 @@ public class OptionsManager : MonoBehaviour
     public void SwapController()
     {
         ControllerInput = !ControllerInput;
+    }
 
+    public void PauseGame()
+    {
+        Cursor.lockState = (Cursor.lockState == CursorLockMode.Locked) ? CursorLockMode.None : CursorLockMode.Locked;
+        Time.timeScale = (Time.timeScale == 1) ? 0 : 1;
+        pauseScreen.SetActive(!pauseScreen.activeSelf);
+    }
+
+    public void Exit()
+    {
+        SceneManager.LoadScene("Menu");
     }
 
 

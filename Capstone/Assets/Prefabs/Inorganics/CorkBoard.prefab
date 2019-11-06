@@ -158,7 +158,7 @@ GameObject:
   - component: {fileID: 3014917937961095641}
   - component: {fileID: 5665505456659953056}
   - component: {fileID: 5358338275561765484}
-  - component: {fileID: 8310303269141580903}
+  - component: {fileID: 6641614556083885051}
   m_Layer: 0
   m_Name: CorkBoard
   m_TagString: Untagged
@@ -203,6 +203,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -228,8 +229,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &8310303269141580903
-MeshCollider:
+--- !u!65 &6641614556083885051
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -238,10 +239,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -9188946827185807150, guid: fe0a1eb6b4acd0a4e81429540a84357f, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.050000004, y: 1, z: 2.0839362}
+  m_Center: {x: -0.0000000055879354, y: 0, z: -0.000000059604645}
 --- !u!1 &6406432747252596238
 GameObject:
   m_ObjectHideFlags: 0

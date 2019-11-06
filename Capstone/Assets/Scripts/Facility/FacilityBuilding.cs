@@ -68,9 +68,11 @@ public class FacilityBuilding : MonoBehaviour
         EntityBasic eb = other.GetComponent<EntityBasic>();
         if (eb)
         {
+            if (PlayerPrefs.GetFloat("LongestContainment") < eb.TimeInContainment) PlayerPrefs.SetFloat("LongestContainment", eb.TimeInContainment);
             SceneManager.LoadScene(eb.EmptyScene, LoadSceneMode.Additive);
             SceneManager.UnloadSceneAsync(eb.ContainmentScene);
             playerPrompts.CriticalAlert("Entity Escaped");
+
         }
     }
 

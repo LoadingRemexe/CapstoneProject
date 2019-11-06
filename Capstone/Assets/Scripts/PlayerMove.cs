@@ -12,7 +12,7 @@ public class PlayerMove : MonoBehaviour, PlayerControls.IPlayerActions
 
     float limitY = 60.0f;
     public float cameraSmooth { get; set; } = 30f;
-    public float speed { get; set; } = 5f;
+    public float speed { get; set; } = 6f;
     public float SightDistance { get; set; } = 3.0f;
 
     float lookVertical = 0.0f;
@@ -58,20 +58,29 @@ public class PlayerMove : MonoBehaviour, PlayerControls.IPlayerActions
 
     public void OnInteract(InputAction.CallbackContext context)
     {
-        ToggleInteract();
+        if (context.started)
+        {
+            ToggleInteract();
+        }
     }
 
     public void OnUse(InputAction.CallbackContext context)
     {
-        if (heldObject && heldObject.UsableObjectFunction != null)
+        if (context.started)
         {
-            heldObject.UsableObjectFunction.Invoke();
+            if (heldObject && heldObject.UsableObjectFunction != null)
+            {
+                heldObject.UsableObjectFunction.Invoke();
+            }
         }
     }
     public void OnPickUp(InputAction.CallbackContext context)
     {
-        DropObject();
-        TogglePickup();
+        if (context.started)
+        {
+            DropObject();
+            TogglePickup();
+        }
     }
     public void OnScroll(InputAction.CallbackContext context)
     {
@@ -89,8 +98,10 @@ public class PlayerMove : MonoBehaviour, PlayerControls.IPlayerActions
 
     public void OnPause(InputAction.CallbackContext context)
     {
-        Cursor.lockState = (Time.timeScale == 1)? CursorLockMode.None : CursorLockMode.Locked;
-        Time.timeScale = (Time.timeScale == 1) ? 0 : 1;
+        if (context.started)
+        {
+            FindObjectOfType<OptionsManager>().PauseGame();
+        }
     }
 
     #endregion

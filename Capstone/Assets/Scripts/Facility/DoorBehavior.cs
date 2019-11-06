@@ -12,11 +12,6 @@ public class DoorBehavior : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         animator.SetBool("isOpen", isOpen);
-       Interactable[] i =  GetComponentsInChildren<Interactable>();
-        foreach (Interactable item in i)
-        {
-            item.InteractActivate.AddListener(InvertOpen);
-        }
     }
 
     void Update()
