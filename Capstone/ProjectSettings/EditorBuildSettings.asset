@@ -15,14 +15,8 @@ EditorBuildSettings:
     path: Assets/Scenes/ContainmentRooms/ParaBearContainmentRoom.unity
     guid: 147a533301e775d418f6ea5aa5d8105f
   - enabled: 1
-    path: Assets/Scenes/ContainmentRooms/EmptyParaBearContainmentRoom.unity
-    guid: a508d7f0cf075184a9cf13fdbe9b3a71
-  - enabled: 1
     path: Assets/Scenes/ContainmentRooms/RainyDayContainmentRoom.unity
     guid: 7d695a6821477f541b2bdbc851ed4ee5
-  - enabled: 1
-    path: Assets/Scenes/ContainmentRooms/EmptyRainyDayContainmentRoom.unity
-    guid: 292eab06108c3c249ba68553ae09313e
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 4b906940bc0ffc747a430213da1c3c5c,
       type: 2}

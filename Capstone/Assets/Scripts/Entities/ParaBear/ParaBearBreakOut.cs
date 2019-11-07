@@ -18,6 +18,10 @@ public class ParaBearBreakOut : StateMachineBehaviour
             Instantiate(paraCopy, animator.transform.position, animator.transform.rotation, null);
         }
         pbc.BabesConsumed = 0;
+        if (pbc.entityBasic.TimeInContainment/60 > 5.0f)
+        {
+            containmentCountdown = 30.0f;
+        }
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -29,19 +33,21 @@ public class ParaBearBreakOut : StateMachineBehaviour
         if (containmentCountdown <= 0.0f)
         {
             animator.SetTrigger("Escape");
-            containmentCountdown = 60.0f;
         }
         if (!pbc.CheckForHunger())
         {
             animator.SetTrigger("Idle");
-            containmentCountdown = 60.0f;
         }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-
+        containmentCountdown = 60.0f;
+        if (pbc.entityBasic.TimeInContainment/60 > 5.0f)
+        {
+            containmentCountdown = 30.0f;
+        }
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

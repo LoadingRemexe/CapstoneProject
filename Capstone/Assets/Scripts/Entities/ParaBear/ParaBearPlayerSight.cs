@@ -8,6 +8,7 @@ public class ParaBearPlayerSight : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         pbc = animator.GetComponent<ParaBearController>();
+        
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

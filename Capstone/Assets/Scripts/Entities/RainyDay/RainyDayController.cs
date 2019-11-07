@@ -7,13 +7,28 @@ public class RainyDayController : MonoBehaviour
 {
     [SerializeField] public Animator UmbrellaAnimator = null;
     [SerializeField] LayerMask entityLayer;
+    [SerializeField] AudioSource footstep;
+    [SerializeField] AudioSource UmbrellaSnap;
+    [SerializeField] AudioSource[] Gurgles;
 
-    public Animator animator;
-    public EntityBasic entityBasic;
-    public PlayerMove playerMove;
-    public NavMeshAgent navMeshAgent;
-    public Rigidbody rbody;
+    public Animator animator { get; set; }
+    public EntityBasic entityBasic { get; set; }
+    public PlayerMove playerMove { get; set; }
+    public NavMeshAgent navMeshAgent { get; set; }
+    public Rigidbody rbody { get; set; }
 
+    public void PlayFootstep()
+    {
+        footstep.Play();
+    }
+    public void PlayUmbrellaSnap()
+    {
+        UmbrellaSnap.Play();
+    }
+    public void PlayRandomGurgle()
+    {
+        Gurgles[Random.Range(0, Gurgles.Length)].Play();
+    }
 
     void Start()
     {
@@ -54,7 +69,7 @@ public class RainyDayController : MonoBehaviour
     void articulateStatistics()
     {
         entityBasic.Statistics = "Entity Scanned: Entity #4 and #5" +
-            "\nTime in Containment:" + entityBasic.TimeInContainment.ToString("00.00") + " seconds" +
+            "\nTime in Containment:" + (entityBasic.TimeInContainment/60).ToString("00.0") + " minutes" +
             "\nEmotional State: Happy(?)";
     }
 }

@@ -13,7 +13,10 @@ public class RainyDayBreakOut : StateMachineBehaviour
         rdc = animator.GetComponent<RainyDayController>();
         rdc.UmbrellaAnimator.SetBool("isRaining",true);
         animator.SetBool("HoldUpUmbrella",true);
-
+        if (rdc.entityBasic.TimeInContainment/60 > 5.0f)
+        {
+            EscapeTimer = 30.0f;
+        }
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -34,6 +37,10 @@ public class RainyDayBreakOut : StateMachineBehaviour
         rdc.UmbrellaAnimator.SetBool("isRaining", false);
         animator.SetBool("HoldUpUmbrella", false);
         EscapeTimer = 60.0f;
+        if (rdc.entityBasic.TimeInContainment/60 > 5.0f)
+        {
+            EscapeTimer = 30.0f;
+        }
 
     }
 

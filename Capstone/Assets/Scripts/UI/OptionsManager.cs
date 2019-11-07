@@ -33,10 +33,10 @@ public class OptionsManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Mathf.Clamp(SFXVolume, -10, 20);
+        Mathf.Clamp(SFXVolume, -80, 0);
         audioMixer.SetFloat("SFX_Volume", SFXVolume);
 
-        audioReadout.text = SFXVolume.ToString("0.00");
+        audioReadout.text = (((SFXVolume + 80.0f)/80)*100).ToString("00");
 
         pm.speed = slider_Control1.Value * speedmax;
         speedReadout.text = pm.speed.ToString("0.00");
@@ -74,7 +74,9 @@ public class OptionsManager : MonoBehaviour
 
     public void Exit()
     {
-        SceneManager.LoadScene("Menu");
+        //SceneManager.LoadScene("Menu");
+        LoadingScreen.Instance.Show(SceneManager.LoadSceneAsync("Menu"));
+
     }
 
 

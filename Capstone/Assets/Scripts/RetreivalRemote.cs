@@ -54,6 +54,7 @@ public class RetreivalRemote : MonoBehaviour
     void DeActivateRetreive()
     {
         entityRetreiving.GetComponentInParent<Animator>().SetBool("Retreive", false);
+        entityRetreiving.GetComponentInParent<Animator>().SetTrigger("Idle");
 
         Debug.Log("DeActivate Retreive");
         entityRetreiving = null;

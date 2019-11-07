@@ -32,12 +32,12 @@ public class ParaBearBabySight : StateMachineBehaviour
         }
         if (targetBaby)
         {
-            Debug.Log("Baby Targeted");
+         //   Debug.Log("Baby Targeted");
             pbc.navMeshAgent.SetDestination(targetBaby.transform.position);
         }
         else
         {
-            Debug.Log("Baby Target Aborted");
+          //  Debug.Log("Baby Target Aborted");
             animator.SetTrigger("Idle");
         }
 
@@ -72,7 +72,10 @@ public class ParaBearBabySight : StateMachineBehaviour
          
         if (targetBaby)
         {
-            if (Vector3.Distance(pbc.navMeshAgent.transform.position, targetBaby.transform.position) < 0.25f && !targetBaby.GetComponent<Carryable>().isHeld) //check if it has reached the baby, and the baby isnt being held onto by player or other creature.
+            //Debug.Log("Baby Distance: " + Vector3.Distance(pbc.transform.position, targetBaby.transform.position));
+            //Debug.Log("Baby Status: Held: " + targetBaby.GetComponent<Carryable>().isHeld);
+
+            if (Vector3.Distance(pbc.transform.position, targetBaby.transform.position) < 1f && !targetBaby.GetComponent<Carryable>().isHeld) //check if it has reached the baby, and the baby isnt being held onto by player or other creature.
             {
                 Destroy(targetBaby);// destroy original 
                 pbc.navMeshAgent.SetDestination(pbc.transform.position);

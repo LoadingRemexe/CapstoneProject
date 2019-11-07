@@ -12,6 +12,7 @@ public class RainyDayPlayerSight : StateMachineBehaviour
         rdc = animator.GetComponent<RainyDayController>();
         animator.SetBool("HoldOutUmbrella", true);
         rdc.UmbrellaAnimator.SetBool("isOpen", true);
+        rdc.PlayUmbrellaSnap();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -28,6 +29,7 @@ public class RainyDayPlayerSight : StateMachineBehaviour
     {
         animator.SetBool("HoldOutUmbrella", false);
         rdc.UmbrellaAnimator.SetBool("isOpen", false);
+        rdc.PlayUmbrellaSnap();
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

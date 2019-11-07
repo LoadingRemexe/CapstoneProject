@@ -6,13 +6,13 @@ public class EntityBasic : MonoBehaviour
 {
     [SerializeField] public ContainmentRoom containmentRoom;
     [SerializeField] public string ContainmentScene;
-    [SerializeField] public string EmptyScene;
     public float TimeInContainment = 0.0f;
     public string Statistics = "";
 
     private void Update()
     {
         TimeInContainment += Time.deltaTime;
+        if (PlayerPrefs.GetFloat("LongestContainment") < TimeInContainment) PlayerPrefs.SetFloat("LongestContainment", TimeInContainment);
     }
 
 }

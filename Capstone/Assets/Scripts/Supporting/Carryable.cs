@@ -47,11 +47,8 @@ public class Carryable : MonoBehaviour
         body.enabled = true;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (collisionSFX)
-        {
-            collisionSFX.Play();
-        }
+        collisionSFX.Play();
     }
 }

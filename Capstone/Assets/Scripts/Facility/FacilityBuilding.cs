@@ -5,19 +5,15 @@ public class FacilityBuilding : MonoBehaviour
 {
     [SerializeField] public Transform Exit;
     [SerializeField] public Switch_Toggle LockDownSwitch;
-    [SerializeField] bool LoadParabear = false;
-    [SerializeField] bool LoadRainyDay = false;
     [SerializeField] AudioSource RedAlert;
+
+    bool[] containmentRoomsLoaded = new bool[5];
     public bool onLockdown;
 
     Light[] lights;
 
-
-    float InitialTimer = 10.0f;
-    bool loaded = false;
     PlayerMove playerMove;
     HandHeldPrompter playerPrompts;
-
 
     // Start is called before the first frame update
     void Start()
@@ -29,32 +25,13 @@ public class FacilityBuilding : MonoBehaviour
         playerMove = FindObjectOfType<PlayerMove>();
         playerPrompts = FindObjectOfType<HandHeldPrompter>();
         lights = FindObjectsOfType<Light>();
-
-        string LoadInPrompts = "";
-        LoadInPrompts += "Observation Room 1: \nVacant \n";
-        if (LoadRainyDay)
-        {
-            LoadInPrompts += "Observation Room 2: \nEntity Arrived \n";
-            SceneManager.LoadScene("RainyDayContainmentRoom", LoadSceneMode.Additive);
-        }
-        else
-        {
-            LoadInPrompts += "Observation Room 2: \nVacant \n";
-            SceneManager.LoadScene("EmptyRainyDayContainmentRoom", LoadSceneMode.Additive);
-        }
-        LoadInPrompts += "Observation Room 3: \nVacant \n";
-        if (LoadParabear)
-        {
-            LoadInPrompts += "Observation Room 4: \nEntity Arrived \n";
-            SceneManager.LoadScene("ParaBearContainmentRoom", LoadSceneMode.Additive);
-        }
-        else
-        {
-            LoadInPrompts += "Observation Room 4: \nVacant \n";
-            SceneManager.LoadScene("EmptyParaBearContainmentRoom", LoadSceneMode.Additive);
-        }
-        LoadInPrompts += "Observation Room 5: \nVacant \n";
-        playerPrompts.UpdateText1(LoadInPrompts);
+        updateEntityStatus(1, false);
+        updateEntityStatus(2, false);
+        updateEntityStatus(3, false);
+        updateEntityStatus(4, false);
+        updateEntityStatus(5, false);
+        SceneManager.LoadScene("RainyDayContainmentRoom", LoadSceneMode.Additive);
+        SceneManager.LoadScene("ParaBearContainmentRoom", LoadSceneMode.Additive);
 
     }
 
@@ -63,16 +40,33 @@ public class FacilityBuilding : MonoBehaviour
 
     }
 
+    public void updateEntityStatus(int roomnum, bool Loaded)
+    {
+        containmentRoomsLoaded[roomnum - 1] = Loaded;
+        string LoadInPrompts = "";
+        for (int i = 1; i < 6; i++)
+        {
+            LoadInPrompts += "Observation Room " + i.ToString() + ": \n";
+            if (containmentRoomsLoaded[i - 1])
+            {
+                LoadInPrompts += "Entity Arrived\n";
+            }
+            else
+            {
+                LoadInPrompts += "Vacant \n";
+            }
+        }
+        playerPrompts.UpdateText1(LoadInPrompts);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         EntityBasic eb = other.GetComponent<EntityBasic>();
         if (eb)
         {
-            if (PlayerPrefs.GetFloat("LongestContainment") < eb.TimeInContainment) PlayerPrefs.SetFloat("LongestContainment", eb.TimeInContainment);
-            SceneManager.LoadScene(eb.EmptyScene, LoadSceneMode.Additive);
             SceneManager.UnloadSceneAsync(eb.ContainmentScene);
+            SceneManager.LoadScene(eb.ContainmentScene, LoadSceneMode.Additive);
             playerPrompts.CriticalAlert("Entity Escaped");
-
         }
     }
 

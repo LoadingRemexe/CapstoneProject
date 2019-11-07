@@ -3,6 +3,7 @@
 public class DoorBehavior : MonoBehaviour
 {
     [SerializeField] AudioSource DoorSFX;
+    [SerializeField] AudioSource DoorLockedSFX;
     public bool isUnlocked = true;
     public bool isOpen = false;
     Animator animator;
@@ -22,6 +23,7 @@ public class DoorBehavior : MonoBehaviour
     public void InvertLock()
     {
         isUnlocked = !isUnlocked;
+        if (DoorLockedSFX) DoorSFX.Play();
     }
 
     public void InvertOpen()
@@ -30,6 +32,9 @@ public class DoorBehavior : MonoBehaviour
         {
             if (DoorSFX) DoorSFX.Play();
             isOpen = !isOpen;
+        } else
+        {
+            if (DoorLockedSFX) DoorSFX.Play();
         }
     }
 
@@ -39,6 +44,10 @@ public class DoorBehavior : MonoBehaviour
         {
             if (DoorSFX) DoorSFX.Play();
             isOpen = true;
+        }
+        else
+        {
+            if (DoorLockedSFX) DoorSFX.Play();
         }
     }
     public void CloseDoor()
@@ -50,9 +59,11 @@ public class DoorBehavior : MonoBehaviour
     public void LockDoor()
     {
         isUnlocked = false;
+        if (DoorLockedSFX) DoorSFX.Play();
     }
     public void UnlockDoor()
     {
         isUnlocked = true;
+        if (DoorLockedSFX) DoorSFX.Play();
     }
 }

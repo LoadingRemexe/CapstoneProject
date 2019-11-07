@@ -5,15 +5,27 @@ using UnityEngine.AI;
 public class ParaBearController : MonoBehaviour
 {
     [SerializeField] List<GameObject> eyes = null;
-    public Animator animator;
-    public EntityBasic entityBasic;
-    public PlayerMove playerMove;
-    public NavMeshAgent navMeshAgent;
-    public Rigidbody rbody;
+    [SerializeField] AudioSource[] squeaks;
+
+    public Animator animator { get; set; }
+    public EntityBasic entityBasic { get; set; }
+    public PlayerMove playerMove { get; set; }
+    public NavMeshAgent navMeshAgent { get; set; }
+    public Rigidbody rbody { get; set; }
 
     public int BabesConsumed = 0;
     public float Hunger = 120.0f;
     public float TimeSinceFed = 0.0f;
+
+    public void PlaySqueak(int index)
+    {
+        if (index >= squeaks.Length) index = 0;
+        squeaks[index].Play();
+    }
+    public void PlayRandomSqueak()
+    {
+        squeaks[Random.Range(0,squeaks.Length)].Play();
+    }
 
     void Start()
     {
@@ -93,10 +105,18 @@ public class ParaBearController : MonoBehaviour
     {
         string hungery = (CheckForHunger()) ? "Hungry" : "Happy";
         entityBasic.Statistics = "Entity Scanned: Entity #1" +
-            "\nTime in Containment:" + entityBasic.TimeInContainment.ToString("00.00") + " seconds" +
-            "\nTime since last feeding:" + (TimeSinceFed).ToString("00.00") + " seconds" +
+            "\nTime in Containment:" + (entityBasic.TimeInContainment / 60).ToString("00.0") + " minutes" +
+            "\nTime since last feeding:" + (TimeSinceFed).ToString("00") + " seconds" +
             "\nEmotional State: " + hungery;
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        PlayRandomSqueak();
+    }
+}
+
+
 
     #region depreciated code
 
@@ -169,5 +189,5 @@ public class ParaBearController : MonoBehaviour
 
 
     #endregion
-}
+
 

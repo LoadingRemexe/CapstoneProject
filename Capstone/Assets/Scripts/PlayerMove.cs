@@ -179,7 +179,7 @@ public class PlayerMove : MonoBehaviour, PlayerControls.IPlayerActions
 
         rb.velocity = Vector3.zero;
         rb.MovePosition(rb.transform.position += ((rb.transform.forward * Movement.y + rb.transform.right * Movement.x) * speed * Time.deltaTime));
-        animator.SetFloat("Speed", Movement.y + Movement.x);
+        animator.SetFloat("Speed", Mathf.Abs(Movement.y + Movement.x));
 
 
     }

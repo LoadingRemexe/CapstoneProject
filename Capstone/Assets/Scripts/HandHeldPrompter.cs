@@ -67,6 +67,6 @@ public class HandHeldPrompter : MonoBehaviour
     public void CriticalAlert(string text)
     {
         CriticalText.text = text;
-        criticalAlertTimer = 30.0f;
+        criticalAlertTimer = 10.0f;
     }
 }
