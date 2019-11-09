@@ -1,31 +1,46 @@
+-------Assets-------
+Diamond: https://assetstore.unity.com/packages/2d/gui/icons/glass-buttons-97713
+
+--------Fonts-------
+https://www.1001freefonts.com/
+	Abandon Alphabeta
+	Alanis Hand
+	Beth Ellen 2.0
+	Brown Bag Lunch
+	gobaaa handwritten comic
+	GoodDP_SDF
+	Otto SDF
+	Otto
+
 ---------SFX---------
-Mug: https://freesound.org/people/mohomran/sounds/179997/
-Clipboard: https://freesound.org/people/OwlStorm/sounds/209004/
-Red Alert: https://freesound.org/people/imagery2/sounds/458570/
-Squeak: https://freesound.org/people/tix99/sounds/379238/
-HandHeld Device: https://freesound.org/people/glueIsobar/sounds/195137/
-Security Camera: https://freesound.org/people/InspectorJ/sounds/418387/
+https://freesound.org/people/
+Mug: mohomran/sounds/179997/
+Clipboard: OwlStorm/sounds/209004/
+Red Alert: imagery2/sounds/458570/
+Squeak: tix99/sounds/379238/
+HandHeld Device: glueIsobar/sounds/195137/
+Security Camera: InspectorJ/sounds/418387/
 Door: 
-	https://freesound.org/people/primeval_polypod/sounds/156509/
-	https://freesound.org/people/DWOBoyle/sounds/474176/
-	https://freesound.org/people/JPolito/sounds/391724/
+	primeval_polypod/sounds/156509/
+	DWOBoyle/sounds/474176/
+	JPolito/sounds/391724/
 Button: 
-	https://freesound.org/people/peepholecircus/sounds/196979/
-	https://freesound.org/people/DWOBoyle/sounds/144227/
+	peepholecircus/sounds/196979/
+	DWOBoyle/sounds/144227/
 Entities:
-Player Footstep: https://freesound.org/people/Yoyodaman234/sounds/223152/
-RainyDay/Inky Rain Sounds: https://freesound.org/people/13GPanska_Stanek_Vojtech/sounds/371917/
-RainyDay/Inky Footstep: https://freesound.org/people/nathanaelj83/sounds/145242/
-RainyDay/Inky Umbrella: https://freesound.org/people/bewareofkites20/sounds/148918/
+Player Footstep: Yoyodaman234/sounds/223152/
+RainyDay/Inky Rain Sounds: 13GPanska_Stanek_Vojtech/sounds/371917/
+RainyDay/Inky Footstep: nathanaelj83/sounds/145242/
+RainyDay/Inky Umbrella: bewareofkites20/sounds/148918/
 RainyDay/Inky Voice:
-	https://freesound.org/people/ldezem/sounds/386211/
-	https://freesound.org/people/ModulationStation/sounds/133977/
-	https://freesound.org/people/Zott820/sounds/209576/
-	https://freesound.org/people/Reitanna/sounds/252255/
+	ldezem/sounds/386211/
+	ModulationStation/sounds/133977/
+	Zott820/sounds/209576/
+	Reitanna/sounds/252255/
 ParaBear Squeaks:
-	https://freesound.org/people/Reitanna/sounds/343973/
-	https://freesound.org/people/Reitanna/sounds/343971/
-	https://freesound.org/people/Reitanna/sounds/344007/
+	Reitanna/sounds/343973/
+	Reitanna/sounds/343971/
+	Reitanna/sounds/344007/
 
 ---------SoundTracks/Ambience-----------
 Facility: Music by Type 42 - type42.bandcamp.com https://opengameart.org/content/ambient-soundtrack

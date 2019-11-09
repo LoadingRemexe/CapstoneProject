@@ -16,6 +16,8 @@ public class MenuScene : MonoBehaviour
 
     private void Start()
     {
+        Cursor.lockState = CursorLockMode.None;
+
         if (PlayerPrefs.HasKey("LongestContainment"))
         {
             containmentTime.text = (PlayerPrefs.GetFloat("LongestContainment")/60.0f).ToString("00.00") + " minutes";

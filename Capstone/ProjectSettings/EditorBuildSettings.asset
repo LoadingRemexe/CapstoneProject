@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ContainmentRooms/RainyDayContainmentRoom.unity
     guid: 7d695a6821477f541b2bdbc851ed4ee5
+  - enabled: 1
+    path: Assets/Scenes/EntityTesting.unity
+    guid: 5937db86fd1e1c0488d7242c37fc6874
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 4b906940bc0ffc747a430213da1c3c5c,
       type: 2}

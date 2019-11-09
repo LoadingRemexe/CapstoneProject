@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 //Code Credits: https://www.windykeep.com/2018/02/15/make-loading-screen-unity/
 
-public class LoadingScreen : MonoBehaviour
+public class LoadingScreen : Singleton<LoadingScreen>
 {
-    public static LoadingScreen Instance;
+   // public static LoadingScreen Instance;
     // Make sure the loading screen shows for at least 1 second:
     private const float MIN_TIME_TO_SHOW = 0.5f;
     // The reference to the current loading operation running in the background:
@@ -34,20 +34,22 @@ public class LoadingScreen : MonoBehaviour
     [SerializeField]
     private GameObject LoadingPanel;
 
-    private void Awake()
+    public override void Awake()
     {
-        // Singleton logic:
-        if (Instance == null)
-        {
-            Instance = this;
-            // Don't destroy the loading screen while switching scenes:
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
+        base.Awake();
+
+        //// Singleton logic:
+        //if (Instance == null)
+        //{
+        //    Instance = this;
+        //    // Don't destroy the loading screen while switching scenes:
+        //    DontDestroyOnLoad(gameObject);
+        //}
+        //else
+        //{
+        //    Destroy(gameObject);
+        //    return;
+        //}
         Configure();
         Hide();
     }
@@ -99,7 +101,6 @@ public class LoadingScreen : MonoBehaviour
         LoadingPanel.SetActive(true);
         // Store the reference:
         currentLoadingOperation = loadingOperation;
-        DontDestroyOnLoad(gameObject);
         // Stop the loading operation from finishing, even if it technically did:
         currentLoadingOperation.allowSceneActivation = false;
         // Reset the UI:
