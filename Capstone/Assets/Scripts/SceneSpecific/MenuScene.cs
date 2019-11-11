@@ -13,9 +13,11 @@ public class MenuScene : MonoBehaviour
     [SerializeField] AudioMixer audioMixer;
     [SerializeField] Slider audioLevels;
     [SerializeField] TextMeshProUGUI containmentTime;
+    [SerializeField] GameObject debugButton;
 
     private void Start()
     {
+        debugButton.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
 
         if (PlayerPrefs.HasKey("LongestContainment"))
@@ -36,13 +38,22 @@ public class MenuScene : MonoBehaviour
         {
             Waypoint = Waypoint.NextWaypoint;
         }
+        containmentTime.text = (PlayerPrefs.GetFloat("LongestContainment") / 60.0f).ToString("00.00") + " minutes";
 
         audioMixer.SetFloat("M_Volume", audioLevels.value);
-
+        if (Input.GetKeyDown(KeyCode.Equals))
+        {
+            debugButton.SetActive(!debugButton.activeSelf);
+        }
     }
 
     public void StartGame()
     {
         LoadingScreen.Instance.Show(SceneManager.LoadSceneAsync("Facility"));
+    }
+
+    public void ResetContainmentTime()
+    {
+        PlayerPrefs.SetFloat("LongestContainment", 0.0f);
     }
 }

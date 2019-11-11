@@ -10,6 +10,7 @@ public class HandHeldPrompter : MonoBehaviour
     [SerializeField] TextMeshProUGUI text2;
     [SerializeField] TextMeshProUGUI CriticalText;
     [SerializeField] GameObject CriticalPopUp;
+    [SerializeField] AudioSource popupAlert;
 
     float criticalAlertTimer = 0.0f;
     float tipTimer = 10.0f;
@@ -66,6 +67,7 @@ public class HandHeldPrompter : MonoBehaviour
 
     public void CriticalAlert(string text)
     {
+        popupAlert.Play();
         CriticalText.text = text;
         criticalAlertTimer = 10.0f;
     }
