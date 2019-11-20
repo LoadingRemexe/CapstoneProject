@@ -16,7 +16,7 @@ public class HandheldScanner : MonoBehaviour
     GameObject entityScanning = null;
     public bool ViewLine = true;
 
-    float laserMaxLength = 5f;
+    float laserMaxLength = 6f;
     Vector3 endPosition = Vector3.zero;
 
     // Start is called before the first frame update

@@ -15,8 +15,7 @@ public class OptionsManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI cameraReadout;
 
     PlayerMove pm;
-    float sensitivitymax = 40.0f;
-    bool ControllerInput = false;
+    Vector2 sensitivitymax = new Vector2(1.0f, 9.0f);
     float speedmax = 8.0f;
     float SFXVolume;
 
@@ -26,7 +25,7 @@ public class OptionsManager : MonoBehaviour
     {
         pm = FindObjectOfType<PlayerMove>();
         slider_Control1.Value = pm.speed / speedmax;
-        slider_Control2.Value = pm.cameraSmooth / sensitivitymax;
+        slider_Control2.Value = pm.cameraSmooth / sensitivitymax.y;
         audioMixer.GetFloat("SFX_Volume", out SFXVolume);
     }
 
@@ -41,12 +40,7 @@ public class OptionsManager : MonoBehaviour
         pm.speed = slider_Control1.Value * speedmax;
         speedReadout.text = pm.speed.ToString("0.00");
 
-
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            SwapController();
-        }
-        pm.cameraSmooth = (ControllerInput) ? slider_Control2.Value * sensitivitymax : slider_Control2.Value * ( sensitivitymax * 0.5f);
+        pm.cameraSmooth = sensitivitymax.x + (slider_Control2.Value * sensitivitymax.y) ;
         cameraReadout.text = pm.cameraSmooth.ToString("0.00");
 
     }
@@ -60,11 +54,6 @@ public class OptionsManager : MonoBehaviour
         SFXVolume--;
     }
 
-    public void SwapController()
-    {
-        ControllerInput = !ControllerInput;
-    }
-
     public void PauseGame()
     {
         Cursor.lockState = (Cursor.lockState == CursorLockMode.Locked) ? CursorLockMode.None : CursorLockMode.Locked;
@@ -75,6 +64,15 @@ public class OptionsManager : MonoBehaviour
     public void Exit()
     {
         //SceneManager.LoadScene("Menu");
+      foreach(Scene scene in SceneManager.GetAllScenes())
+        {
+            if (scene != SceneManager.GetActiveScene())
+            {
+
+                Debug.Log("unloaded " + scene.name);
+                SceneManager.UnloadScene(scene);
+            }
+        }
         LoadingScreen.Instance.Show(SceneManager.LoadSceneAsync("Menu"));
 
     }

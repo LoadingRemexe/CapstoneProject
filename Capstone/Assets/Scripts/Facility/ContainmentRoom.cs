@@ -31,7 +31,7 @@ public class ContainmentRoom : MonoBehaviour
             Loaded = true;
             containedEntity.SetActive(true);
             FindObjectOfType<FacilityBuilding>().updateEntityStatus(roomNumber, Loaded);
-            FindObjectOfType<HandHeldPrompter>().CriticalAlert("An Entity Has Been Reclaimed.");
+            FindObjectOfType<HandHeldPrompter>().CriticalAlert("An Entity Has Been Delivered To Containment Room #" + roomNumber.ToString());
             InitialTimer = 10.0f;
         }
     }

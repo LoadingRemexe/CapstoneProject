@@ -19,6 +19,7 @@ public class MenuScene : MonoBehaviour
     {
         debugButton.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
+        FindObjectOfType<ScreenCover>().Screen.SetActive(false);
 
         if (PlayerPrefs.HasKey("LongestContainment"))
         {

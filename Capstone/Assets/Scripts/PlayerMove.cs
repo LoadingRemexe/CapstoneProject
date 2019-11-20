@@ -11,7 +11,7 @@ public class PlayerMove : MonoBehaviour, PlayerControls.IPlayerActions
 
 
     float limitY = 60.0f;
-    public float cameraSmooth { get; set; } = 30f;
+    public float cameraSmooth { get; set; } = 10f;
     public float speed { get; set; } = 6f;
     public float SightDistance { get; set; } = 3.0f;
 

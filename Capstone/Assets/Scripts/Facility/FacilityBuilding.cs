@@ -15,6 +15,7 @@ public class FacilityBuilding : MonoBehaviour
     PlayerMove playerMove;
     HandHeldPrompter playerPrompts;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +33,7 @@ public class FacilityBuilding : MonoBehaviour
         updateEntityStatus(5, false);
         SceneManager.LoadScene("RainyDayContainmentRoom", LoadSceneMode.Additive);
         SceneManager.LoadScene("ParaBearContainmentRoom", LoadSceneMode.Additive);
-
+        FindObjectOfType<ScreenCover>().Screen.SetActive(false);
     }
 
     void Update()
@@ -49,7 +50,7 @@ public class FacilityBuilding : MonoBehaviour
             LoadInPrompts += "Observation Room " + i.ToString() + ": \n";
             if (containmentRoomsLoaded[i - 1])
             {
-                LoadInPrompts += "Entity Arrived\n";
+                LoadInPrompts += "Occupied\n";
             }
             else
             {

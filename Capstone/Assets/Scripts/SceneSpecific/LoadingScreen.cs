@@ -30,6 +30,9 @@ public class LoadingScreen : Singleton<LoadingScreen>
     private bool hidePercentageText;
     // Flag whether the fade out animation was triggered.
     private bool didTriggerFadeOutAnimation;
+    // Cover ui objects
+    ScreenCover SC;
+
 
     [SerializeField]
     private GameObject LoadingPanel;
@@ -97,8 +100,9 @@ public class LoadingScreen : Singleton<LoadingScreen>
     // We can determine the loading's progress when needed from the AsyncOperation param:
     public void Show(AsyncOperation loadingOperation)
     {
+        FindObjectOfType<ScreenCover>().Screen.SetActive(true);
         // Enable the loading screen:
-        LoadingPanel.SetActive(true);
+      if (LoadingPanel)  LoadingPanel.SetActive(true);
         // Store the reference:
         currentLoadingOperation = loadingOperation;
         // Stop the loading operation from finishing, even if it technically did:
@@ -115,7 +119,7 @@ public class LoadingScreen : Singleton<LoadingScreen>
     public void Hide()
     {
         // Disable the loading screen:
-        LoadingPanel.SetActive(false);
+        if (LoadingPanel) LoadingPanel.SetActive(false);
         currentLoadingOperation = null;
         isLoading = false;
     }
