@@ -34,6 +34,10 @@ public class FacilityBuilding : MonoBehaviour
         SceneManager.LoadScene("RainyDayContainmentRoom", LoadSceneMode.Additive);
         SceneManager.LoadScene("ParaBearContainmentRoom", LoadSceneMode.Additive);
         FindObjectOfType<ScreenCover>().Screen.SetActive(false);
+
+        SetLockdown(true);
+        playerPrompts.CriticalAlert("Turn Off Lockdown");
+
     }
 
     void Update()

@@ -15,8 +15,8 @@ public class OptionsManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI cameraReadout;
 
     PlayerMove pm;
-    Vector2 sensitivitymax = new Vector2(1.0f, 9.0f);
-    float speedmax = 8.0f;
+    Vector2 sensitivitymax = new Vector2(45.0f, 55.0f);
+    Vector2 speedMax = new Vector2(3.0f, 5.0f);
     float SFXVolume;
 
 
@@ -24,7 +24,10 @@ public class OptionsManager : MonoBehaviour
     void Start()
     {
         pm = FindObjectOfType<PlayerMove>();
-        slider_Control1.Value = pm.speed / speedmax;
+        pm.cameraSmooth = (sensitivitymax.x + sensitivitymax.y) / 2.0f;
+        pm.speed = (speedMax.x + speedMax.y) / 2.0f;
+
+        slider_Control1.Value = pm.speed / speedMax.y;
         slider_Control2.Value = pm.cameraSmooth / sensitivitymax.y;
         audioMixer.GetFloat("SFX_Volume", out SFXVolume);
     }
@@ -37,7 +40,7 @@ public class OptionsManager : MonoBehaviour
 
         audioReadout.text = (((SFXVolume + 80.0f)/80)*100).ToString("00");
 
-        pm.speed = slider_Control1.Value * speedmax;
+        pm.speed = speedMax.x + (slider_Control1.Value * speedMax.y);
         speedReadout.text = pm.speed.ToString("0.00");
 
         pm.cameraSmooth = sensitivitymax.x + (slider_Control2.Value * sensitivitymax.y) ;
@@ -63,18 +66,8 @@ public class OptionsManager : MonoBehaviour
 
     public void Exit()
     {
-        //SceneManager.LoadScene("Menu");
-      foreach(Scene scene in SceneManager.GetAllScenes())
-        {
-            if (scene != SceneManager.GetActiveScene())
-            {
-
-                Debug.Log("unloaded " + scene.name);
-                SceneManager.UnloadScene(scene);
-            }
-        }
+        Time.timeScale = 1;
         LoadingScreen.Instance.Show(SceneManager.LoadSceneAsync("Menu"));
-
     }
 
 
