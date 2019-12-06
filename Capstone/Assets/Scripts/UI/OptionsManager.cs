@@ -15,8 +15,8 @@ public class OptionsManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI cameraReadout;
 
     PlayerMove pm;
-    Vector2 sensitivitymax = new Vector2(45.0f, 55.0f);
-    Vector2 speedMax = new Vector2(3.0f, 5.0f);
+    Vector2 sensitivitymax = new Vector2(45.0f, 50.0f);
+    Vector2 speedMax = new Vector2(3.0f, 4.0f);
     float SFXVolume;
 
 

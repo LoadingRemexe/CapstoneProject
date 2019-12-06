@@ -52,8 +52,11 @@ public class PlayerMove : MonoBehaviour, PlayerControls.IPlayerActions
 
     public void OnLook(InputAction.CallbackContext context)
     {
+
         // Debug.Log("look" + context.ReadValue<Vector2>());
-        Looking = context.ReadValue<Vector2>();
+        //Looking = new Vector2( Mathf.Clamp(-1,1,context.ReadValue<Vector2>().x), Mathf.Clamp(-1,1,context.ReadValue<Vector2>().y));
+        Looking =  context.ReadValue<Vector2>();
+
     }
 
     public void OnInteract(InputAction.CallbackContext context)
