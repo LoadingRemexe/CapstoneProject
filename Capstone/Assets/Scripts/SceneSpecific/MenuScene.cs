@@ -57,4 +57,8 @@ public class MenuScene : MonoBehaviour
     {
         PlayerPrefs.SetFloat("LongestContainment", 0.0f);
     }
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }
